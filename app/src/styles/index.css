@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-gold: #C9A962;
+  --color-gold-light: #E8DFC8;
+  --color-beige: #F5F1EB;
+  --color-cream: #FAF8F5;
+  --color-brown: #3D3229;
+  --color-brown-light: #5C4D3D;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#F5F1EB] text-[#3D3229] antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  
+  .font-sans {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .text-gold {
+    color: var(--color-gold);
+  }
+  
+  .bg-gold {
+    background-color: var(--color-gold);
+  }
+  
+  .bg-beige {
+    background-color: var(--color-beige);
+  }
+  
+  .bg-cream {
+    background-color: var(--color-cream);
+  }
+  
+  .border-gold {
+    border-color: var(--color-gold);
+  }
+  
+  /* Button Styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-[#C9A962] text-white font-medium rounded-full transition-all duration-300 hover:bg-[#B8984F] hover:shadow-lg hover:shadow-[#C9A962]/25 hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-[#3D3229] text-[#3D3229] font-medium rounded-full transition-all duration-300 hover:bg-[#3D3229] hover:text-white;
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-[#C9A962] text-[#C9A962] font-medium rounded-full transition-all duration-300 hover:bg-[#C9A962] hover:text-white;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-[#FAF8F5] rounded-2xl shadow-sm transition-all duration-300 hover:shadow-xl;
+  }
+  
+  /* Section Styles */
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+  
+  /* Animation Classes */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  /* Calendly Container */
+  .calendly-container {
+    @apply w-full min-h-[700px];
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-beige);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-gold);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brown);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gradient-gold {
+    background: linear-gradient(135deg, #C9A962 0%, #E8DFC8 100%);
+  }
+  
+  .gradient-cream {
+    background: linear-gradient(180deg, #FAF8F5 0%, #F5F1EB 100%);
+  }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Calendly Inline Widget Override */
+.calendly-inline-widget iframe {
+  min-height: 700px !important;
+}
