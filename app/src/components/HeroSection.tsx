@@ -30,7 +30,7 @@ const HeroSection = ({
 }: HeroSectionProps) => {
   if (variant === 'product') {
     return (
-      <section className="relative bg-[#F5F1EB] overflow-hidden">
+      <section className="relative bg-[#F3EFE8] overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
@@ -43,10 +43,10 @@ const HeroSection = ({
                   {subtitle}
                 </p>
               )}
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#3D3229] leading-tight mb-6">
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#4A4239] leading-tight mb-6">
                 {title}
               </h1>
-              <p className="text-[#3D3229]/70 text-lg leading-relaxed mb-8 max-w-xl">
+              <p className="text-[#6B5A4D] text-lg leading-relaxed mb-8 max-w-xl">
                 {description}
               </p>
               
@@ -57,7 +57,7 @@ const HeroSection = ({
                       <Star key={i} className="w-5 h-5 fill-[#C9A962] text-[#C9A962]" />
                     ))}
                   </div>
-                  <span className="text-[#3D3229]/60 text-sm">
+                  <span className="text-[#7D6A5A] text-sm">
                     5/5 - 1300+ tevreden klanten
                   </span>
                 </div>
@@ -91,12 +91,12 @@ const HeroSection = ({
                     loading="eager"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-[#3D3229]/30">
+                  <div className="w-full h-full flex items-center justify-center text-[#7D6A5A]/30">
                     Afbeelding
                   </div>
                 )}
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl">
+              <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-[#D4C8B8]/30">
                 <p className="text-3xl font-serif text-[#C9A962] mb-1">1300+</p>
                 <p className="text-[#3D3229]/60 text-sm">Beeldjes gerealiseerd</p>
               </div>
@@ -136,14 +136,59 @@ const HeroSection = ({
     );
   }
 
-  // Default 'home' variant
+  // Default 'home' variant - Met gradient text effect
   return (
-    <section className="relative bg-[#F5F1EB] overflow-hidden min-h-[90vh] flex items-center">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#C9A962]/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#E8DFC8]/40 rounded-full blur-3xl" />
+    <section className="relative bg-[#F3EFE8] overflow-hidden min-h-[90vh] flex items-center">
+      {/* Subtle warm gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#F3EFE8] via-[#F8F5F0] to-[#EDE8E2]" />
+      
+      {/* Decorative soft blobs - CSS only */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#D4A574]/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 -left-40 w-[500px] h-[500px] bg-[#C9A962]/8 rounded-full blur-3xl" />
       </div>
+
+      <style>{`
+        @keyframes gradientShift {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        .gradient-text {
+          background: linear-gradient(
+            135deg, 
+            #4A4239 0%, 
+            #6B4E3D 25%, 
+            #8B6914 50%, 
+            #C9A962 75%,
+            #4A4239 100%
+          );
+          background-size: 200% 200%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          animation: gradientShift 8s ease infinite;
+        }
+        .gradient-text-subtle {
+          background: linear-gradient(
+            90deg,
+            #4A4239 0%,
+            #5A4A3D 50%,
+            #4A4239 100%
+          );
+          background-size: 200% 100%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          animation: gradientShift 6s ease-in-out infinite;
+        }
+        @keyframes subtleFloat {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-5px); }
+        }
+        .float-animation {
+          animation: subtleFloat 4s ease-in-out infinite;
+        }
+      `}</style>
 
       <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -151,69 +196,102 @@ const HeroSection = ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="relative z-10"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-[#C9A962]/10 rounded-full mb-6">
-              <Star className="w-4 h-4 text-[#C9A962] mr-2" />
-              <span className="text-[#3D3229] text-sm font-medium">1300+ zwangerschappen vastgelegd</span>
+            {/* Badge */}
+            <div className="inline-flex items-center px-4 py-2 bg-[#7D5A4C]/10 rounded-full mb-8">
+              <Star className="w-4 h-4 text-[#C9A962] mr-2 fill-[#C9A962]" />
+              <span className="text-[#5A4A3D] text-sm font-medium tracking-wide">1300+ zwangerschappen vastgelegd</span>
             </div>
 
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-[#3D3229] leading-[1.1] mb-6">
-              {title}
+            {/* Main headline with gradient */}
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8">
+              <span className="gradient-text">Leg je zwangerschap</span>
+              <br />
+              <span className="gradient-text">voor altijd vast</span>
             </h1>
-            <p className="text-[#3D3229]/70 text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
-              {description}
-            </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to={ctaLink} className="btn-primary text-lg">
-                {ctaText}
-                <ArrowRight className="ml-2 w-5 h-5" />
+            {/* Subheadline */}
+            <div className="space-y-3 mb-10">
+              <p className="text-[#5A4A3D] text-lg md:text-xl leading-relaxed max-w-xl">
+                <span className="font-medium text-[#4A4239]">Professioneel 3D-scantraject</span> met premium afwerking.
+              </p>
+              <p className="text-[#6B5A4D] text-lg">
+                Comfortabel, veilig en persoonlijk.
+              </p>
+              <p className="text-[#7D6A5A] text-base">
+                Alles inbegrepen — <span className="font-medium text-[#C9A962]">zonder meerkosten</span>, inclusief 3D-scan.
+              </p>
+            </div>
+
+            {/* CTA Buttons - Original Babycrafts colors */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Link 
+                to={ctaLink} 
+                className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#7D5A4C] text-white rounded-full font-medium text-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#7D5A4C]/20 hover:-translate-y-0.5"
+              >
+                <span className="relative z-10">{ctaText}</span>
+                <ArrowRight className="ml-2 w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#6B4E3D] to-[#8B6A5C] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
-              <Link to="/zwangerschapsbeeldje" className="btn-secondary text-lg">
-                Bekijk Collectie
+              <Link 
+                to="/zwangerschapsbeeldje" 
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#7D5A4C]/30 text-[#5A4A3D] rounded-full font-medium text-lg hover:border-[#7D5A4C] hover:bg-[#7D5A4C]/5 transition-all duration-300"
+              >
+                Zie Collectie
               </Link>
             </div>
 
-            <div className="mt-12 flex items-center space-x-8">
-              <div>
-                <p className="font-serif text-3xl text-[#C9A962]">5/5</p>
-                <p className="text-[#3D3229]/60 text-sm">Google Reviews</p>
+            {/* Stats */}
+            <div className="flex items-center space-x-8 pt-6 border-t border-[#D4C8B8]/50">
+              <div className="float-animation" style={{ animationDelay: '0s' }}>
+                <div className="flex items-center gap-1 mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-[#C9A962] text-[#C9A962]" />
+                  ))}
+                </div>
+                <p className="text-[#7D6A5A] text-sm">5/5 uit <span className="font-medium text-[#5A4A3D]">1300+</span> reviews</p>
               </div>
-              <div className="w-px h-12 bg-[#3D3229]/20" />
-              <div>
-                <p className="font-serif text-3xl text-[#C9A962]">5-6</p>
-                <p className="text-[#3D3229]/60 text-sm">Weken levertijd</p>
-              </div>
-              <div className="w-px h-12 bg-[#3D3229]/20" />
-              <div>
-                <p className="font-serif text-3xl text-[#C9A962]">€199</p>
-                <p className="text-[#3D3229]/60 text-sm">Vanaf prijs</p>
+              <div className="w-px h-10 bg-[#D4C8B8]" />
+              <div className="float-animation" style={{ animationDelay: '0.5s' }}>
+                <p className="font-serif text-2xl text-[#7D5A4C]">5-6</p>
+                <p className="text-[#7D6A5A] text-sm">Weken levertijd</p>
               </div>
             </div>
           </motion.div>
 
+          {/* Image side */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.95, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative hidden lg:block"
           >
-            <div className="aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
-              <img
-                src={imageUrl || "/images/studio/DSC00571.JPG"}
-                alt="Zwangerschapsbeeldje"
-                className="w-full h-full object-cover"
-                loading="eager"
-              />
-            </div>
-            <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-xl">
-              <div className="flex items-center space-x-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-[#C9A962] text-[#C9A962]" />
-                ))}
+            <div className="relative">
+              {/* Decorative frame */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-[#C9A962]/20 to-[#7D5A4C]/10 rounded-[2.5rem] blur-xl" />
+              
+              <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl shadow-[#4A4239]/10">
+                <img
+                  src={imageUrl || "/images/studio/DSC00571.JPG"}
+                  alt="Zwangerschapsbeeldje"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#4A4239]/20 via-transparent to-transparent" />
               </div>
-              <p className="text-[#3D3229] font-medium">"Nog mooier dan verwacht"</p>
-              <p className="text-[#3D3229]/60 text-sm">- Michelle van Dijk</p>
+              
+              {/* Floating review card */}
+              <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-xl border border-[#D4C8B8]/30">
+                <div className="flex items-center gap-1 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-[#C9A962] text-[#C9A962]" />
+                  ))}
+                </div>
+                <p className="text-[#4A4239] font-medium text-sm">"Nog mooier dan verwacht"</p>
+                <p className="text-[#7D6A5A] text-xs">— Michelle van Dijk</p>
+              </div>
             </div>
           </motion.div>
         </div>

@@ -69,17 +69,17 @@
     border-color: var(--color-gold);
   }
   
-  /* Button Styles - nieuw zacht goud */
+  /* Button Styles - Originele Babycrafts warm bruin */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 bg-gold text-white font-medium rounded-full transition-all duration-300 hover:bg-gold-dark hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-[#7D5A4C] text-white font-medium rounded-full transition-all duration-300 hover:bg-[#6B4E3D] hover:shadow-lg hover:shadow-[#7D5A4C]/20 hover:-translate-y-0.5;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-brown-deep text-brown-deep font-medium rounded-full transition-all duration-300 hover:bg-brown-deep hover:text-cream-light;
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-[#7D5A4C]/30 text-[#5A4A3D] font-medium rounded-full transition-all duration-300 hover:border-[#7D5A4C] hover:bg-[#7D5A4C]/5;
   }
   
   .btn-outline {
-    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-gold text-gold font-medium rounded-full transition-all duration-300 hover:bg-gold hover:text-white;
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-[#C9A962] text-[#C9A962] font-medium rounded-full transition-all duration-300 hover:bg-[#C9A962] hover:text-white;
   }
   
   /* Card Styles */
