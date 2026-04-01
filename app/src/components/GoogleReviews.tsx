@@ -96,7 +96,7 @@ const GoogleReviews = () => {
   return (
     <section className="bg-[#3D3229] text-white overflow-hidden">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-28">
-        <{/* Header */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -124,7 +124,7 @@ const GoogleReviews = () => {
           </div>
         </motion.div>
 
-        <{/* Featured Review Carousel */}
+        {/* Featured Review Carousel */}
         <div className="max-w-4xl mx-auto relative">
           <div className="relative min-h-[300px] flex items-center justify-center">
             <AnimatePresence initial={false} custom={direction}>
@@ -218,7 +218,7 @@ const GoogleReviews = () => {
           </div>
         </div>
 
-        <{/* Trust Badges */}
+        {/* Trust Badges */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

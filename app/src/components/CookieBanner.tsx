@@ -53,7 +53,7 @@ const CookieBanner = () => {
     <AnimatePresence>
       {isVisible && (
         <>
-          <!-- Backdrop -->
+          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -62,7 +62,7 @@ const CookieBanner = () => {
             onClick={() => setShowDetails(false)}
           />
           
-          <!-- Banner -->
+          {/* Banner */}
           <motion.div
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

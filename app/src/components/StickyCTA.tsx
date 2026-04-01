@@ -65,7 +65,7 @@ const StickyCTA = ({ calendlyUrl = 'https://calendly.com/babycrafts/afspraak' }:
     <AnimatePresence>
       {isVisible && (
         <>
-          <!-- Desktop Sticky Bar -->
+          {/* Desktop Sticky Bar */}
           <motion.div
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -119,7 +119,7 @@ const StickyCTA = ({ calendlyUrl = 'https://calendly.com/babycrafts/afspraak' }:
             </div>
           </motion.div>
 
-          <!-- Mobile Sticky Button -->
+          {/* Mobile Sticky Button */}
           <motion.div
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
