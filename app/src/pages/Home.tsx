@@ -6,7 +6,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import ProductCard from '../components/ProductCard';
-import Testimonials from '../components/Testimonials';
+import GoogleReviews from '../components/GoogleReviews';
 import CTABlock from '../components/CTABlock';
 import { pageSEO } from '../lib/seo';
 
@@ -76,27 +76,6 @@ const Home = () => {
       icon: Clock,
       title: '5-6 weken levertijd',
       description: 'Eerlijke levertijden zonder verborgen vertragingen.',
-    },
-  ];
-
-  const testimonials = [
-    {
-      quote: 'Heel blij met het prachtige beeldje van Lindsay, ze stelde me op gemak tijdens de fotoshoot en hebben samen gekeken wat het mooiste is, heel fijn!',
-      name: 'Sigal Kruithof',
-      location: 'Rotterdam',
-      rating: 5,
-    },
-    {
-      quote: 'Super blij met mijn prachtige beeldje! Lindsay is erg vriendelijk en neemt de tijd om alles rustig uit te leggen. Het resultaat is prachtig.',
-      name: 'Janey Ligtenberg',
-      location: 'Den Haag',
-      rating: 5,
-    },
-    {
-      quote: 'Wat een bijzondere ervaring om mijn zwangerschap zo te laten vastleggen. Het beeldje is nog mooier dan ik had verwacht. Echt een kunstwerk!',
-      name: 'Michelle van Dijk',
-      location: 'Delft',
-      rating: 5,
     },
   ];
 
@@ -309,8 +288,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <Testimonials testimonials={testimonials} />
+      {/* Google Reviews */}
+      <GoogleReviews />
 
       {/* CTA Block */}
       <CTABlock />

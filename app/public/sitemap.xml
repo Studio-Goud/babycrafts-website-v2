@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://babycrafts.nl/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://babycrafts.nl/images/products/Arte%20Lumina%201.avif</image:loc>
+      <image:title>Arte-Lumina 3D Zwangerschapsbeeldje</image:title>
+      <image:caption>Onze bestseller - luxe zwangerschapsbeeldje met tijdloze uitstraling</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Hoofdproductpagina's -->
+  <url>
+    <loc>https://babycrafts.nl/zwangerschapsbeeldje</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://babycrafts.nl/images/products/Arte%20Lumina%201.avif</image:loc>
+      <image:title>Zwangerschapsbeeldje Arte-Lumina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://babycrafts.nl/images/products/Alba%20Natura.avif</image:loc>
+      <image:title>Zwangerschapsbeeldje Alba-Natura</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://babycrafts.nl/ouder-en-kind-beeldje</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://babycrafts.nl/images/products/Ouder%20%26%20Kind%20beeldje.avif</image:loc>
+      <image:title>Ouder en Kind 3D Beeldje</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://babycrafts.nl/familiebeeldje</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://babycrafts.nl/babybeeldje</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://babycrafts.nl/schoonheidsbeeldje</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Conversie pagina's -->
+  <url>
+    <loc>https://babycrafts.nl/tarieven</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://babycrafts.nl/contact</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://babycrafts.nl/over-ons</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- SEO landingspagina's -->
+  <url>
+    <loc>https://babycrafts.nl/eerste-zwangerschap-beeldje</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://babycrafts.nl/uniek-kraamcadeau</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://babycrafts.nl/zwangerschap-vastleggen-beeldje</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

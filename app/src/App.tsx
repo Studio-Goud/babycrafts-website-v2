@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
+import StickyCTA from './components/StickyCTA';
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'));
@@ -47,6 +48,7 @@ function App() {
         <Route path="/overons" element={<OverOns />} />
         <Route path="/prijzen" element={<Tarieven />} />
       </Routes>
+      <StickyCTA />
     </Suspense>
   );
 }

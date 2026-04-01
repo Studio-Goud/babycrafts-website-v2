@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# Sitemap locatie
+Sitemap: https://babycrafts.nl/sitemap.xml
+
+# Hoofdpagina's
+Allow: /
+Allow: /zwangerschapsbeeldje
+Allow: /ouder-en-kind-beeldje
+Allow: /familiebeeldje
+Allow: /babybeeldje
+Allow: /schoonheidsbeeldje
+Allow: /tarieven
+Allow: /contact
+Allow: /over-ons
+Allow: /eerste-zwangerschap-beeldje
+Allow: /uniek-kraamcadeau
+Allow: /zwangerschap-vastleggen-beeldje
+
+# Afbeeldingen
+Allow: /images/
+
+# Assets
+Allow: /assets/
+
+# Crawl-delay om server niet te belasten
+Crawl-delay: 1
+
+# Disallow admin/config paths (indien aanwezig)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
