@@ -16,6 +16,7 @@ const OverOns = lazy(() => import('./pages/OverOns'));
 const EersteZwangerschap = lazy(() => import('./pages/EersteZwangerschap'));
 const Kraamcadeau = lazy(() => import('./pages/Kraamcadeau'));
 const Vastleggen = lazy(() => import('./pages/Vastleggen'));
+const Bedankt = lazy(() => import('./pages/Bedankt'));
 
 // Loading component
 const PageLoader = () => (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/eerste-zwangerschap-beeldje" element={<EersteZwangerschap />} />
         <Route path="/uniek-kraamcadeau" element={<Kraamcadeau />} />
         <Route path="/zwangerschap-vastleggen-beeldje" element={<Vastleggen />} />
+        <Route path="/bedankt" element={<Bedankt />} />
         
         {/* Redirects for common variations */}
         <Route path="/zwangerschap" element={<Zwangerschap />} />

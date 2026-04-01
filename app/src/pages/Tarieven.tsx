@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Check, HelpCircle, ArrowRight, 
+  Check, HelpCircle, 
   ChevronDown, ChevronUp, Info, Baby, Users, Heart
 } from 'lucide-react';
 import Navigation from '../components/Navigation';
@@ -50,13 +50,13 @@ const Tarieven = () => {
         name: 'Arte-Lumina',
         subtitle: 'Premium Resin',
         description: 'Luxe zwangerschapsbeeldjes met een verfijnde, tijdloze uitstraling. Volledig gepersonaliseerd in houding, stijl en afwerking.',
-        basePrice: 'vanaf €199',
+        basePrice: 'vanaf €249',
         image: '/images/products/Arte Lumina 1.avif',
         tiers: [
-          { size: '14 cm', price: '€199' },
-          { size: '16 cm', price: '€219', popular: true },
-          { size: '18 cm', price: '€239' },
-          { size: '20 cm', price: '€259' },
+          { size: '14 cm', price: '€249' },
+          { size: '16 cm', price: '€289' },
+          { size: '18 cm', price: '€329', popular: true },
+          { size: '20 cm', price: '€369' },
         ],
         features: [
           'Professionele 3D-scan',
@@ -76,8 +76,8 @@ const Tarieven = () => {
         image: '/images/products/Alba Natura.avif',
         tiers: [
           { size: '14 cm', price: '€199' },
-          { size: '16 cm', price: '€219', popular: true },
-          { size: '18 cm', price: '€239' },
+          { size: '16 cm', price: '€219' },
+          { size: '18 cm', price: '€239', popular: true },
           { size: '20 cm', price: '€259' },
         ],
         features: [
@@ -94,10 +94,10 @@ const Tarieven = () => {
         name: 'Atelier-Bronze',
         subtitle: 'Brons/Koper Afwerking',
         description: 'Een krachtig statement met een massieve uitstraling. Afgewerkt met een dikke laag echt brons of koper.',
-        basePrice: 'vanaf €569',
+        basePrice: 'vanaf €549',
         image: '/images/products/Atelier Bronze.avif',
         tiers: [
-          { size: '15 cm', price: '€569' },
+          { size: '15 cm', price: '€549' },
           { size: '17 cm', price: '€589', popular: true },
           { size: '19 cm', price: '€629' },
         ],
@@ -115,12 +115,12 @@ const Tarieven = () => {
         name: 'Gegoten Brons',
         subtitle: '100% Echt Brons',
         description: 'Het ultieme bronzen zwangerschapsbeeldje, volledig gegoten uit echt brons. Tijdloos en bedoeld als blijvend erfstuk.',
-        basePrice: 'vanaf €1.069',
+        basePrice: 'vanaf €889',
         image: '/images/products/Gegoten Brons gepoetst goud afwerking.avif',
         tiers: [
-          { size: '15 cm', price: '€1.069' },
-          { size: '17 cm', price: '€1.139', popular: true },
-          { size: '19 cm', price: '€1.189' },
+          { size: '15 cm', price: '€889' },
+          { size: '17 cm', price: '€939', popular: true },
+          { size: '19 cm', price: '€989' },
         ],
         features: [
           'Professionele 3D-scan',
@@ -607,7 +607,7 @@ const Tarieven = () => {
                 Kies een datum en tijd die jou uitkomt. We zien ernaar uit je te verwelkomen!
               </p>
             </div>
-            <CalendlyEmbed url="https://calendly.com/babycrafts/afspraak" />
+            <CalendlyEmbed url="https://calendly.com/babycrafts-info/30min" />
           </div>
         </div>
       </section>
@@ -733,16 +733,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
               </div>
             ))}
           </div>
-          
-          <a
-            href={product.calendlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary w-full mt-4 flex items-center justify-center gap-2"
-          >
-            Boek deze variant
-            <ArrowRight className="w-4 h-4" />
-          </a>
         </div>
       </div>
     </motion.div>

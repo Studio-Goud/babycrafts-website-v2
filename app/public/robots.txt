@@ -31,3 +31,6 @@ Crawl-delay: 1
 Disallow: /admin/
 Disallow: /api/
 Disallow: /private/
+
+# Bedanktpagina uitsluiten van indexering (conversie tracking)
+Disallow: /bedankt
