@@ -6,7 +6,7 @@ interface StickyCTAProps {
   calendlyUrl?: string;
 }
 
-const StickyCTA = ({ calendlyUrl = 'https://calendly.com/babycrafts/afspraak' }: StickyCTAProps) => {
+const StickyCTA = ({ calendlyUrl = 'https://calendly.com/babycrafts-info/30min' }: StickyCTAProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
   const [showUrgency, setShowUrgency] = useState(false);

@@ -333,7 +333,7 @@ const Werkwijze = () => {
         title="Benieuwd hoe jouw beeldje eruit zou zien?"
         description="Plan een vrijblijvende scan in onze studio"
         ctaText="Boek een afspraak"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <Footer />

@@ -21,7 +21,7 @@ const HeroSection = ({
   subtitle,
   description,
   ctaText = 'Boek je Afspraak',
-  ctaLink = '/tarieven',
+  ctaLink = 'https://calendly.com/babycrafts-info/30min',
   secondaryCtaText,
   secondaryCtaLink,
   showRating = true,
@@ -64,10 +64,15 @@ const HeroSection = ({
               )}
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to={ctaLink} className="btn-primary">
+                <a 
+                  href={ctaLink}
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="btn-primary"
+                >
                   {ctaText}
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
+                </a>
                 {secondaryCtaText && secondaryCtaLink && (
                   <Link to={secondaryCtaLink} className="btn-secondary">
                     {secondaryCtaText}
@@ -136,13 +141,13 @@ const HeroSection = ({
     );
   }
 
-  // Default 'home' variant - Met gradient text effect
+  // Default 'home' variant
   return (
-    <section className="relative bg-[#F3EFE8] overflow-hidden min-h-[90vh] flex items-center">
+    <section className="relative bg-[#F3EFE8] overflow-hidden">
       {/* Subtle warm gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#F3EFE8] via-[#F8F5F0] to-[#EDE8E2]" />
       
-      {/* Decorative soft blobs - CSS only */}
+      {/* Decorative soft blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#D4A574]/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 -left-40 w-[500px] h-[500px] bg-[#C9A962]/8 rounded-full blur-3xl" />
@@ -168,19 +173,6 @@ const HeroSection = ({
           background-clip: text;
           animation: gradientShift 8s ease infinite;
         }
-        .gradient-text-subtle {
-          background: linear-gradient(
-            90deg,
-            #4A4239 0%,
-            #5A4A3D 50%,
-            #4A4239 100%
-          );
-          background-size: 200% 100%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          animation: gradientShift 6s ease-in-out infinite;
-        }
         @keyframes subtleFloat {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-5px); }
@@ -190,73 +182,63 @@ const HeroSection = ({
         }
       `}</style>
 
-      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-24">
-        {/* Mobile background image - uses same image as desktop but as subtle background */}
-        <div 
-          className="absolute inset-0 lg:hidden opacity-[0.12] pointer-events-none"
-          style={{
-            backgroundImage: `url("${imageUrl || '/images/studio/DSC00571.JPG'}")`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center top',
-            backgroundRepeat: 'no-repeat',
-          }}
-        />
-        {/* Stronger gradient overlay for better text readability */}
-        <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-[#F3EFE8]/60 via-[#F3EFE8]/40 to-[#F3EFE8]/90" />
-
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-8 pb-12 lg:pt-12 lg:pb-24">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center">
+          {/* Text Content - moved up on desktop */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative z-10"
+            className="relative z-10 order-2 lg:order-1 lg:-mt-8"
           >
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-[#7D5A4C]/10 rounded-full mb-8">
+            <div className="inline-flex items-center px-4 py-2 bg-[#7D5A4C]/10 rounded-full mb-6">
               <Star className="w-4 h-4 text-[#C9A962] mr-2 fill-[#C9A962]" />
               <span className="text-[#5A4A3D] text-sm font-medium tracking-wide">1300+ zwangerschappen vastgelegd</span>
             </div>
 
-            {/* Main headline with gradient and text shadow for readability */}
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 drop-shadow-sm">
+            {/* Main headline */}
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6">
               <span className="gradient-text">Leg je zwangerschap</span>
               <br />
               <span className="gradient-text">voor altijd vast</span>
             </h1>
 
-            {/* Subheadline - darker for readability on mobile */}
-            <div className="space-y-3 mb-10 relative z-10">
-              <p className="text-[#4A4239] text-lg md:text-xl leading-relaxed max-w-xl font-medium drop-shadow-sm">
+            {/* Subheadline */}
+            <div className="space-y-2 mb-8">
+              <p className="text-[#4A4239] text-lg leading-relaxed max-w-xl font-medium">
                 Professioneel 3D-scantraject met premium afwerking.
               </p>
-              <p className="text-[#5A4A3D] text-lg drop-shadow-sm">
+              <p className="text-[#5A4A3D] text-base">
                 Comfortabel, veilig en persoonlijk.
               </p>
-              <p className="text-[#4A4239] text-base drop-shadow-sm">
+              <p className="text-[#4A4239] text-sm">
                 Alles inbegrepen — <span className="font-semibold text-[#7D5A4C]">zonder meerkosten</span>, inclusief 3D-scan.
               </p>
             </div>
 
-            {/* CTA Buttons - Original Babycrafts colors */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link 
-                to={ctaLink} 
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <a 
+                href={ctaLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#7D5A4C] text-white rounded-full font-medium text-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#7D5A4C]/20 hover:-translate-y-0.5"
               >
                 <span className="relative z-10">{ctaText}</span>
                 <ArrowRight className="ml-2 w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#6B4E3D] to-[#8B6A5C] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Link>
+              </a>
               <Link 
                 to="/zwangerschapsbeeldje" 
-                className="inline-flex items-center justify-center px-8 py-4 bg-[#F3EFE8]/80 backdrop-blur-sm border-2 border-[#7D5A4C] text-[#4A4239] rounded-full font-medium text-lg hover:bg-[#7D5A4C] hover:text-white transition-all duration-300 shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white/80 backdrop-blur-sm border-2 border-[#7D5A4C] text-[#4A4239] rounded-full font-medium text-lg hover:bg-[#7D5A4C] hover:text-white transition-all duration-300 shadow-lg"
               >
                 Zie Collectie
               </Link>
             </div>
 
             {/* Stats */}
-            <div className="flex items-center space-x-8 pt-6 border-t border-[#D4C8B8]/50">
+            <div className="flex items-center space-x-6 pt-4 border-t border-[#D4C8B8]/50">
               <div className="float-animation" style={{ animationDelay: '0s' }}>
                 <div className="flex items-center gap-1 mb-1">
                   {[...Array(5)].map((_, i) => (
@@ -273,22 +255,23 @@ const HeroSection = ({
             </div>
           </motion.div>
 
-          {/* Image side */}
+          {/* Image side - Desktop - centered vertically */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:block"
+            className="relative hidden lg:flex order-1 lg:order-2 items-center justify-center"
           >
             <div className="relative">
               {/* Decorative frame */}
               <div className="absolute -inset-4 bg-gradient-to-br from-[#C9A962]/20 to-[#7D5A4C]/10 rounded-[2.5rem] blur-xl" />
               
-              <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl shadow-[#4A4239]/10">
+              {/* Image */}
+              <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl shadow-[#4A4239]/10 max-h-[75vh]">
                 <img
                   src={imageUrl || "/images/studio/DSC00571.JPG"}
                   alt="Zwangerschapsbeeldje"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                   loading="eager"
                 />
                 {/* Subtle gradient overlay */}
@@ -304,6 +287,46 @@ const HeroSection = ({
                 </div>
                 <p className="text-[#4A4239] font-medium text-sm">"Nog mooier dan verwacht"</p>
                 <p className="text-[#7D6A5A] text-xs">— Michelle van Dijk</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Mobile Image - Clearly visible below text */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative lg:hidden order-1"
+          >
+            <div className="relative max-w-sm mx-auto">
+              {/* Decorative glow */}
+              <div className="absolute -inset-2 bg-gradient-to-br from-[#C9A962]/30 to-[#7D5A4C]/20 rounded-3xl blur-xl" />
+              
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src={imageUrl || "/images/studio/DSC00571.JPG"}
+                  alt="Zwangerschapsbeeldje"
+                  className="w-full h-full object-cover object-[center_25%]"
+                  loading="eager"
+                />
+              </div>
+              
+              {/* Mobile review badge */}
+              <div className="absolute -bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-[#D4C8B8]/30">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="flex items-center gap-1 mb-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-3 h-3 fill-[#C9A962] text-[#C9A962]" />
+                      ))}
+                    </div>
+                    <p className="text-[#4A4239] font-medium text-xs">"Nog mooier dan verwacht"</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-serif text-xl text-[#C9A962]">1300+</p>
+                    <p className="text-[#7D6A5A] text-[10px]">Beeldjes</p>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>

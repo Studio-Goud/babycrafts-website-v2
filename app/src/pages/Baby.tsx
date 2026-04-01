@@ -41,7 +41,7 @@ const Baby = () => {
         description="Vang de allereerste momenten van je baby in een uniek 3D beeldje. De allerkleinste details, levenslang vastgelegd."
         imageUrl="/images/products/Baby beeldje.jpg"
         ctaText="Bekijk tarieven"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <section className="bg-[#FAF8F5]">
@@ -125,7 +125,7 @@ const Baby = () => {
         title="Bewaar deze kostbare momenten"
         description="Ze zijn zo snel groot"
         ctaText="Bekijk tarieven"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <Footer />

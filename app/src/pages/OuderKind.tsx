@@ -41,7 +41,7 @@ const OuderKind = () => {
         description="Vang de speciale band tussen ouder en kind in een uniek 3D beeldje. Een tijdloos aandenken aan jullie verbinding die je leven lang meegaat."
         imageUrl="/images/products/Ouder & Kind beeldje.avif"
         ctaText="Bekijk tarieven"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       {/* Intro Section */}
@@ -148,7 +148,7 @@ const OuderKind = () => {
         title="Leg jullie band vast voor altijd"
         description="Het perfecte cadeau voor jezelf of iemand die je liefhebt"
         ctaText="Bekijk tarieven"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <Footer />

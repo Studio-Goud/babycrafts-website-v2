@@ -41,7 +41,7 @@ const EersteZwangerschap = () => {
         title="Je eerste keer, onze zorg"
         description="Je eerste zwangerschap verdient iets bijzonders. Laat dit unieke moment vastleggen in een prachtig 3D beeldje."
         ctaText="Bekijk tarieven"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <section className="bg-[#FAF8F5]">
@@ -140,7 +140,7 @@ const EersteZwangerschap = () => {
         title="Leg je eerste zwangerschap vast"
         description="Een herinnering die je leven lang meegaat"
         ctaText="Bekijk tarieven"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <Footer />

@@ -277,7 +277,7 @@ const StudioRotterdam = () => {
         title="Klaar om jouw zwangerschap vast te leggen?"
         description="Boek nu een afspraak in onze studio"
         ctaText="Bekijk beschikbaarheid"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <Footer />

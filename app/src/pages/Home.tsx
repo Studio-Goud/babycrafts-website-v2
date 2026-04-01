@@ -385,7 +385,7 @@ const Home = () => {
             title="Klaar om jouw zwangerschap vast te leggen?"
             description="Boek nu je 3D-scan en ontvang binnen 5-6 weken je unieke beeldje."
             ctaText="Boek je Afspraak"
-            ctaLink="/tarieven"
+            ctaLink="https://calendly.com/babycrafts-info/30min"
             variant="gold"
           />
         </div>

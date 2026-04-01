@@ -15,7 +15,7 @@ const CTABlock = ({
   title,
   description,
   ctaText = 'Boek je Afspraak',
-  ctaLink = '/tarieven',
+  ctaLink = 'https://calendly.com/babycrafts-info/30min',
   variant = 'gold',
   showSparkle = true,
 }: CTABlockProps) => {
@@ -30,6 +30,8 @@ const CTABlock = ({
     dark: 'bg-[#C9A962] text-white hover:bg-[#B8984F]',
     light: 'bg-[#C9A962] text-white hover:bg-[#B8984F]',
   };
+
+  const isExternal = ctaLink.startsWith('http');
 
   return (
     <section className={variant === 'light' ? 'bg-[#F5F1EB]' : ''}>
@@ -64,13 +66,25 @@ const CTABlock = ({
               </p>
             )}
 
-            <Link
-              to={ctaLink}
-              className={`inline-flex items-center justify-center px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 ${buttonVariants[variant]}`}
-            >
-              {ctaText}
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
+            {isExternal ? (
+              <a
+                href={ctaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center justify-center px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 ${buttonVariants[variant]}`}
+              >
+                {ctaText}
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
+            ) : (
+              <Link
+                to={ctaLink}
+                className={`inline-flex items-center justify-center px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 ${buttonVariants[variant]}`}
+              >
+                {ctaText}
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            )}
           </div>
         </motion.div>
       </div>

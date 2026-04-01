@@ -41,7 +41,7 @@ const Familie = () => {
         description="Laat jullie hele gezin vastleggen in een prachtig 3D familiebeeldje. Een uniek erfstuk voor generaties."
         imageUrl="/images/products/Familie beeldje.png"
         ctaText="Bekijk tarieven"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <section className="bg-[#FAF8F5]">
@@ -140,7 +140,7 @@ const Familie = () => {
         title="Leg jullie familie vast voor altijd"
         description="Een erfstuk om trots op te zijn"
         ctaText="Bekijk tarieven"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <Footer />

@@ -115,7 +115,7 @@ const Zwangerschap = () => {
         description="Het is een tastbare herinnering aan een unieke periode in je leven. Bij Babycrafts 3D leggen we jouw zwangerschap vast met aandacht, vakmanschap en respect voor jouw lichaam en verhaal."
         imageUrl="/images/studio/DSC00508.webp"
         ctaText="Bekijk tarieven"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
         secondaryCtaText="Boek direct"
         secondaryCtaLink="/tarieven"
       />
@@ -257,7 +257,7 @@ const Zwangerschap = () => {
         title="Klaar om jouw zwangerschap vast te leggen?"
         description="Je zwangerschap is uniek. Je beeldje ook."
         ctaText="Boek je Afspraak"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <Footer />

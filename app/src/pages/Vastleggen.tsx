@@ -41,7 +41,7 @@ const Vastleggen = () => {
         title="Niet alles blijft. Dit wel."
         description="Leg je zwangerschap vast op een unieke manier. Een 3D beeldje is een tastbare herinnering die je leven lang meegaat."
         ctaText="Bekijk tarieven"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <section className="bg-[#FAF8F5]">
@@ -144,7 +144,7 @@ const Vastleggen = () => {
         title="Leg je zwangerschap vast"
         description="Voor het te laat is"
         ctaText="Boek je Afspraak"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <Footer />

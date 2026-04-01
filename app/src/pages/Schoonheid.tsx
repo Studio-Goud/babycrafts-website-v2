@@ -40,7 +40,7 @@ const Schoonheid = () => {
         title="Jezelf vieren, in 3D"
         description="Laat je natuurlijke schoonheid vastleggen in een elegant 3D beeldje. Een kunstwerk van jezelf, om van te genieten."
         ctaText="Bekijk tarieven"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <section className="bg-[#FAF8F5]">
@@ -139,7 +139,7 @@ const Schoonheid = () => {
         title="Vier jezelf met een uniek beeldje"
         description="Je verdient dit"
         ctaText="Bekijk tarieven"
-        ctaLink="/tarieven"
+        ctaLink="https://calendly.com/babycrafts-info/30min"
       />
 
       <Footer />

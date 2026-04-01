@@ -25,6 +25,8 @@ const Ambacht = lazy(() => import('./pages/Ambacht'));
 const Blog = lazy(() => import('./pages/Blog'));
 const Cadeaubon = lazy(() => import('./pages/Cadeaubon'));
 const FAQ = lazy(() => import('./pages/FAQ'));
+const Rotterdam = lazy(() => import('./pages/Rotterdam'));
+const DenHaag = lazy(() => import('./pages/DenHaag'));
 
 // Loading component
 const PageLoader = () => (
@@ -61,6 +63,10 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/cadeaubon" element={<Cadeaubon />} />
         <Route path="/faq" element={<FAQ />} />
+        
+        {/* Werkgebieden */}
+        <Route path="/rotterdam" element={<Rotterdam />} />
+        <Route path="/den-haag" element={<DenHaag />} />
         
         {/* Redirects for common variations */}
         <Route path="/zwangerschap" element={<Zwangerschap />} />
