@@ -67,7 +67,7 @@ const OverOns = () => {
                 <div className="relative">
                   <div className="aspect-[4/5] rounded-3xl overflow-hidden">
                     <img
-                      src="/images/studio/DSC00491.webp"
+                      src="/images/studio/DSC00563.webp"
                       alt="Lindsay van Rijn - Oprichtster Babycrafts 3D"
                       className="w-full h-full object-cover"
                     />
