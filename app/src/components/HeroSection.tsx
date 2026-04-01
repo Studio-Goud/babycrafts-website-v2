@@ -193,14 +193,14 @@ const HeroSection = ({
       <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-24">
         {/* Mobile background image - semi transparent */}
         <div 
-          className="absolute inset-0 lg:hidden opacity-10 pointer-events-none"
+          className="absolute inset-0 lg:hidden opacity-[0.15] pointer-events-none"
           style={{
             backgroundImage: `url(${imageUrl || "/images/studio/DSC00571.JPG"})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
-        <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-[#F3EFE8] via-[#F3EFE8]/80 to-[#F3EFE8]" />
+        <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-[#F3EFE8]/70 via-[#F3EFE8]/50 to-[#F3EFE8]" />
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative">
           <motion.div
