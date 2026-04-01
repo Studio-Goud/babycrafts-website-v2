@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Gift, CheckCircle2, MessageCircle, Mail
+  Gift, CheckCircle2, Clock, MessageCircle, Mail, ArrowRight,
+  Sparkles, Heart, Package
 } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -11,7 +12,6 @@ import { pageSEO } from '../lib/seo';
 
 const Cadeaubon = () => {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
-  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     document.title = pageSEO['cadeaubon'].title;
@@ -139,7 +139,6 @@ const Cadeaubon = () => {
                   key={bedrag}
                   onClick={() => {
                     setSelectedAmount(bedrag);
-                    setShowForm(true);
                   }}
                   className={`p-6 rounded-2xl border-2 transition-all duration-300 ${
                     selectedAmount === bedrag

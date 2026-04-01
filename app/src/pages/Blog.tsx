@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import ScrollReveal, { StaggerContainer, StaggerItem } from '../components/ScrollReveal';
+import { StaggerContainer, StaggerItem } from '../components/ScrollReveal';
 import CTABlock from '../components/CTABlock';
 import { pageSEO } from '../lib/seo';
 

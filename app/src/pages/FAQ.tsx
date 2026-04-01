@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, ChevronDown, ChevronUp, HelpCircle, MessageCircle,
@@ -7,7 +6,6 @@ import {
 } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import ScrollReveal from '../components/ScrollReveal';
 import { pageSEO } from '../lib/seo';
 
 const FAQ = () => {
