@@ -76,6 +76,37 @@ export const pageSEO: Record<string, SEOConfig> = {
     description: 'Leg je zwangerschap vast op een unieke manier. Een 3D beeldje is een tastbare herinnering die je leven lang meegaat.',
     keywords: 'zwangerschap vastleggen, zwangerschap bewaren, bol buik',
   },
+  // Nieuwe pagina's
+  'studio-rotterdam': {
+    title: 'Studio Rotterdam | Babycrafts 3D Locatie',
+    description: 'Bezoek onze studio in Rotterdam Delfshaven. Goed bereikbaar met OV, gratis parkeren. Ook thuis- en ziekenhuisscans mogelijk.',
+    keywords: 'babycrafts studio, 3D scan rotterdam, locatie',
+  },
+  werkwijze: {
+    title: 'Werkwijze | Van Scan tot Kunstwerk | Babycrafts',
+    description: 'Ontdek hoe wij van een 3D scan een uniek kunstwerk maken. Stap voor stap door het proces: scan, verwerking, productie en oplevering.',
+    keywords: 'werkwijze, 3D scan proces, hoe werkt het',
+  },
+  ambacht: {
+    title: 'Ambacht & Productie | Onze Materialen | Babycrafts',
+    description: 'Leer meer over onze materialen: Arte-Lumina, Alba-Natura, Atelier-Bronze en Gegoten Brons. Elk met unieke eigenschappen.',
+    keywords: 'materialen, ambacht, brons beeldje, houtvezel',
+  },
+  blog: {
+    title: 'Blog | Alles over Zwangerschapsbeeldjes | Babycrafts',
+    description: 'Lees artikelen over zwangerschapsbeeldjes: timing, veiligheid, materialen en meer. Alles wat je wilt weten.',
+    keywords: 'blog, zwangerschapsbeeldje tips, 3D scan informatie',
+  },
+  cadeaubon: {
+    title: 'Cadeaubon | Geef een 3D Beeldje Cadeau | Babycrafts',
+    description: 'Geef een zwangerschapsbeeldje cadeau met onze cadeaubon. Het perfecte kraamcadeau, 3 jaar geldig, feestelijk verpakt.',
+    keywords: 'cadeaubon, kraamcadeau, 3D beeldje cadeau',
+  },
+  faq: {
+    title: 'FAQ | Veelgestelde Vragen | Babycrafts 3D',
+    description: 'Vind antwoord op al je vragen over zwangerschapsbeeldjes. Timing, veiligheid, materialen, prijzen en meer.',
+    keywords: 'faq, veelgestelde vragen, vragen 3D scan',
+  },
 };
 
 export function generateMetaTags(config: SEOConfig): string {

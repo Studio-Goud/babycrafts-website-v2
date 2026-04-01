@@ -14,13 +14,15 @@ const Footer = () => {
     ],
     informatie: [
       { label: 'Tarieven', path: '/tarieven' },
-      { label: 'Cadeaubon', path: '/tarieven#cadeaubon' },
+      { label: 'Cadeaubon', path: '/cadeaubon' },
       { label: 'Werkwijze', path: '/werkwijze' },
+      { label: 'Ambacht', path: '/ambacht' },
       { label: 'FAQ', path: '/faq' },
       { label: 'Algemene Voorwaarden', path: '/algemene-voorwaarden' },
     ],
     contact: [
       { label: 'Over Ons', path: '/over-ons' },
+      { label: 'Studio Rotterdam', path: '/studio-rotterdam' },
       { label: 'Contact', path: '/contact' },
       { label: 'Blog', path: '/blog' },
     ],

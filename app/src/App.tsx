@@ -18,6 +18,14 @@ const Kraamcadeau = lazy(() => import('./pages/Kraamcadeau'));
 const Vastleggen = lazy(() => import('./pages/Vastleggen'));
 const Bedankt = lazy(() => import('./pages/Bedankt'));
 
+// Nieuwe pagina's
+const StudioRotterdam = lazy(() => import('./pages/StudioRotterdam'));
+const Werkwijze = lazy(() => import('./pages/Werkwijze'));
+const Ambacht = lazy(() => import('./pages/Ambacht'));
+const Blog = lazy(() => import('./pages/Blog'));
+const Cadeaubon = lazy(() => import('./pages/Cadeaubon'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+
 // Loading component
 const PageLoader = () => (
   <div className="min-h-screen bg-[#F5F1EB] flex items-center justify-center">
@@ -46,10 +54,21 @@ function App() {
         <Route path="/zwangerschap-vastleggen-beeldje" element={<Vastleggen />} />
         <Route path="/bedankt" element={<Bedankt />} />
         
+        {/* Nieuwe pagina's */}
+        <Route path="/studio-rotterdam" element={<StudioRotterdam />} />
+        <Route path="/werkwijze" element={<Werkwijze />} />
+        <Route path="/ambacht" element={<Ambacht />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/cadeaubon" element={<Cadeaubon />} />
+        <Route path="/faq" element={<FAQ />} />
+        
         {/* Redirects for common variations */}
         <Route path="/zwangerschap" element={<Zwangerschap />} />
         <Route path="/overons" element={<OverOns />} />
         <Route path="/prijzen" element={<Tarieven />} />
+        <Route path="/studio" element={<StudioRotterdam />} />
+        <Route path="/proces" element={<Werkwijze />} />
+        <Route path="/materialen" element={<Ambacht />} />
       </Routes>
       <StickyCTA />
       <WhatsAppChat />
