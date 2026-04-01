@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Check, HelpCircle, Gift, ArrowRight, Star, 
+  Check, HelpCircle, ArrowRight, 
   ChevronDown, ChevronUp, Info, Baby, Users, Heart
 } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import CalendlyEmbed from '../components/CalendlyEmbed';
-import FAQ from '../components/FAQ';
 import { pageSEO } from '../lib/seo';
 
 interface PriceTier {
@@ -27,6 +26,11 @@ interface ProductPricing {
   image?: string;
 }
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 const Tarieven = () => {
   useEffect(() => {
     document.title = pageSEO.tarieven.title;
@@ -35,9 +39,14 @@ const Tarieven = () => {
   }, []);
 
   const [openAccordion, setOpenAccordion] = useState<string | null>('zwangerschap');
+  const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 
   const toggleAccordion = (id: string) => {
     setOpenAccordion(openAccordion === id ? null : id);
+  };
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   const pricingData = {
@@ -624,7 +633,42 @@ const Tarieven = () => {
             
             <div className="space-y-4">
               {faqItems.map((faq, idx) => (
-                <FAQ key={idx} question={faq.question} answer={faq.answer} />
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 }}
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm"
+                >
+                  <button
+                    onClick={() => toggleFAQ(idx)}
+                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#FAF8F5] transition-colors"
+                  >
+                    <span className="font-medium text-[#3D3229] pr-4">
+                      {faq.question}
+                    </span>
+                    <div
+                      className={`flex-shrink-0 w-8 h-8 rounded-full bg-[#F5F1EB] flex items-center justify-center transition-transform duration-300 ${
+                        openFAQ === idx ? 'rotate-180' : ''
+                      }`}
+                    >
+                      <ChevronDown className="w-5 h-5 text-[#C9A962]" />
+                    </div>
+                  </button>
+                  
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openFAQ === idx ? 'max-h-96' : 'max-h-0'
+                    }`}
+                  >
+                    <div className="px-6 pb-5">
+                      <p className="text-[#3D3229]/70 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </div>

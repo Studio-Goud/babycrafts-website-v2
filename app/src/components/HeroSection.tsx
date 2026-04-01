@@ -4,7 +4,7 @@ import { ArrowRight, Star } from 'lucide-react';
 import { ReactNode } from 'react';
 
 interface HeroSectionProps {
-  title: string | ReactNode;
+  title?: string | ReactNode;
   subtitle?: string;
   description?: string;
   ctaText?: string;

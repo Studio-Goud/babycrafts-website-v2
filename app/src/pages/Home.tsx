@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { 
-  ArrowRight, MapPin, Award, Shield, Clock, 
-  Heart, Star, Gem, Users
+  ArrowRight, MapPin, Award, Shield, 
+  Heart, Star, Gem
 } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
