@@ -199,23 +199,12 @@ const HeroSection = ({
             className="relative hidden lg:block"
           >
             <div className="aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
-              {imageUrl ? (
-                <img
-                  src={imageUrl}
-                  alt="Zwangerschapsbeeldje"
-                  className="w-full h-full object-cover"
-                  loading="eager"
-                />
-              ) : (
-                <div className="w-full h-full bg-gradient-to-br from-[#E8DFC8] to-[#C9A962]/30 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
-                      <span className="font-serif text-5xl text-[#C9A962]">3D</span>
-                    </div>
-                    <p className="text-[#3D3229]/50">Hero Image</p>
-                  </div>
-                </div>
-              )}
+              <img
+                src={imageUrl || "/images/studio/DSC00571.JPG"}
+                alt="Zwangerschapsbeeldje"
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
             </div>
             <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-xl">
               <div className="flex items-center space-x-1 mb-2">

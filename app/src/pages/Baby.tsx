@@ -39,6 +39,7 @@ const Baby = () => {
         subtitle="Babybeeldje"
         title="Die kleine voetjes, die kleine handjes"
         description="Vang de allereerste momenten van je baby in een uniek 3D beeldje. De allerkleinste details, levenslang vastgelegd."
+        imageUrl="/images/products/Baby beeldje.jpg"
         ctaText="Bekijk tarieven"
         ctaLink="/tarieven"
       />

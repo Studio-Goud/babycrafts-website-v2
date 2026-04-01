@@ -39,6 +39,7 @@ const Familie = () => {
         subtitle="Familiebeeldje"
         title="Jullie verhaal, vastgelegd in 3D"
         description="Laat jullie hele gezin vastleggen in een prachtig 3D familiebeeldje. Een uniek erfstuk voor generaties."
+        imageUrl="/images/products/Familie beeldje.png"
         ctaText="Bekijk tarieven"
         ctaLink="/tarieven"
       />

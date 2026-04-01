@@ -39,6 +39,7 @@ const OuderKind = () => {
         subtitle="Ouder \u0026 Kind"
         title="De band tussen ouder en kind"
         description="Vang de speciale band tussen ouder en kind in een uniek 3D beeldje. Een tijdloos aandenken aan jullie verbinding die je leven lang meegaat."
+        imageUrl="/images/products/Ouder & Kind beeldje.avif"
         ctaText="Bekijk tarieven"
         ctaLink="/tarieven"
       />

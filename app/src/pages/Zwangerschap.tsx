@@ -113,6 +113,7 @@ const Zwangerschap = () => {
         subtitle="Zwangerschapsbeeldje"
         title="Een zwangerschapsbeeldje is meer dan een object"
         description="Het is een tastbare herinnering aan een unieke periode in je leven. Bij Babycrafts 3D leggen we jouw zwangerschap vast met aandacht, vakmanschap en respect voor jouw lichaam en verhaal."
+        imageUrl="/images/studio/DSC00508.webp"
         ctaText="Bekijk tarieven"
         ctaLink="/tarieven"
         secondaryCtaText="Boek direct"
