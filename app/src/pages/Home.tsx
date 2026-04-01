@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check, MapPin, Award, Shield, Clock } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
@@ -252,7 +252,10 @@ const Home = () => {
       <GoogleReviews />
 
       {/* CTA Block */}
-      <CTABlock />
+      <CTABlock 
+        title="Klaar om je zwangerschap vast te leggen?"
+        description="Boek nu je 3D-scan en ontvang binnen 5-6 weken je unieke beeldje."
+      />
 
       <Footer />
     </div>
