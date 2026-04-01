@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Gift, CheckCircle2, MessageCircle, Mail
+  Gift, CheckCircle2, Clock, MessageCircle, Mail, Sparkles, Package
 } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+  Scan, Cpu, Palette, Package, Sparkles, Camera,
   ChevronDown, ChevronUp, Clock, CheckCircle2
 } from 'lucide-react';
 import Navigation from '../components/Navigation';
