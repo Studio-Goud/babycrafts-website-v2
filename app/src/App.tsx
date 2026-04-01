@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import StickyCTA from './components/StickyCTA';
+import WhatsAppChat from './components/WhatsAppChat';
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'));
@@ -49,6 +50,7 @@ function App() {
         <Route path="/prijzen" element={<Tarieven />} />
       </Routes>
       <StickyCTA />
+      <WhatsAppChat />
     </Suspense>
   );
 }

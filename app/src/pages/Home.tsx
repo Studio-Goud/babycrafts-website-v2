@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, Heart, Shield, Clock, Award, MapPin, Star, Check } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import ProductCard from '../components/ProductCard';
 import GoogleReviews from '../components/GoogleReviews';
 import CTABlock from '../components/CTABlock';
+import ScrollReveal, { StaggerContainer, StaggerItem } from '../components/ScrollReveal';
 import { pageSEO } from '../lib/seo';
 
 const Home = () => {
@@ -100,56 +100,39 @@ const Home = () => {
       {/* Features Section */}
       <section className="bg-[#FAF8F5]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-28">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <ScrollReveal className="text-center mb-16">
             <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-3">
               Waarom Babycrafts
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#3D3229]">
               Wat ons uniek maakt
             </h2>
-          </motion.div>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center p-6"
-              >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#C9A962]/10 mb-5">
-                  <feature.icon className="w-7 h-7 text-[#C9A962]" />
+              <StaggerItem key={index}>
+                <div className="text-center p-6">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#C9A962]/10 mb-5">
+                    <feature.icon className="w-7 h-7 text-[#C9A962]" />
+                  </div>
+                  <h3 className="font-serif text-xl text-[#3D3229] mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-[#3D3229]/60 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="font-serif text-xl text-[#3D3229] mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-[#3D3229]/60 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </motion.div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Products Section */}
       <section className="bg-[#F5F1EB]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-28">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <ScrollReveal className="text-center mb-16">
             <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-3">
               Onze Collectie
             </p>
@@ -159,26 +142,22 @@ const Home = () => {
             <p className="text-[#3D3229]/70 text-lg max-w-2xl mx-auto">
               Van natuurlijke houtvezel tot massief brons. Kies het materiaal dat bij jou past.
             </p>
-          </motion.div>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+          <StaggerContainer className="grid md:grid-cols-2 gap-6 lg:gap-8" staggerDelay={0.15}>
             {products.map((product, index) => (
-              <ProductCard key={index} {...product} index={index} />
+              <StaggerItem key={index} direction="up">
+                <ProductCard {...product} index={index} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mt-12"
-          >
+          <ScrollReveal delay={0.4} className="text-center mt-12">
             <Link to="/tarieven" className="btn-primary inline-flex">
               Bekijk alle tarieven
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
-          </motion.div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -186,12 +165,7 @@ const Home = () => {
       <section className="bg-[#3D3229] text-white overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-28">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <ScrollReveal direction="left" className="order-2 lg:order-1">
               <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-4">
                 Het Proces
               </p>
@@ -202,41 +176,39 @@ const Home = () => {
                 Het maken van een zwangerschapsbeeldje begint altijd met een afspraak waarin rust en vertrouwen centraal staan. Tijdens deze sessie nemen we de tijd om verschillende houdingen, poses en details te verkennen.
               </p>
 
-              <div className="space-y-4">
+              <StaggerContainer className="space-y-4" staggerDelay={0.1}>
                 {[
                   'Professionele 3D-scan in onze studio',
                   'Digitale nabewerking en verfijning',
                   'Ambachtelijke productie en afwerking',
                   'Oplevering binnen 5-6 weken',
                 ].map((step, index) => (
-                  <div key={index} className="flex items-center">
-                    <div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center mr-4">
-                      <Check className="w-4 h-4 text-[#C9A962]" />
+                  <StaggerItem key={index} direction="right">
+                    <div className="flex items-center">
+                      <div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center mr-4">
+                        <Check className="w-4 h-4 text-[#C9A962]" />
+                      </div>
+                      <span className="text-white/80">{step}</span>
                     </div>
-                    <span className="text-white/80">{step}</span>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right" delay={0.2} className="order-1 lg:order-2">
+              <div className="grid grid-cols-2 gap-4">
+                {studioImages.map((img, idx) => (
+                  <div key={idx} className={`rounded-2xl overflow-hidden ${idx === 0 ? 'col-span-2 aspect-[16/9]' : 'aspect-square'}`}>
+                    <img
+                      src={img}
+                      alt={`Studio impressie ${idx + 1}`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
                   </div>
                 ))}
               </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="grid grid-cols-2 gap-4"
-            >
-              {studioImages.map((img, idx) => (
-                <div key={idx} className={`rounded-2xl overflow-hidden ${idx === 0 ? 'col-span-2 aspect-[16/9]' : 'aspect-square'}`}>
-                  <img
-                    src={img}
-                    alt={`Studio impressie ${idx + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </motion.div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -245,13 +217,7 @@ const Home = () => {
       <section className="bg-[#FAF8F5]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-28">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="order-2 lg:order-1"
-            >
+            <ScrollReveal direction="left" className="order-2 lg:order-1">
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
                   src="/images/products/Ouder & Kind beeldje.avif"
@@ -260,15 +226,9 @@ const Home = () => {
                   loading="lazy"
                 />
               </div>
-            </motion.div>
+            </ScrollReveal>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="order-1 lg:order-2"
-            >
+            <ScrollReveal direction="right" delay={0.1} className="order-1 lg:order-2">
               <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-4">
                 Ouder & Kind
               </p>
@@ -283,7 +243,7 @@ const Home = () => {
                 Ontdek Ouder & Kind
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
-            </motion.div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
