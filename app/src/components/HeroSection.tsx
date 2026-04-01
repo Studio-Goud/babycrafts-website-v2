@@ -182,14 +182,15 @@ const HeroSection = ({
         }
       `}</style>
 
-      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 pt-8 pb-12 lg:pt-12 lg:pb-24">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center">
-          {/* Text Content - moved up on desktop */}
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-8 lg:py-16">
+        {/* DESKTOP: Side by side, closer together */}
+        <div className="hidden lg:grid lg:grid-cols-2 lg:gap-8 items-center max-w-6xl mx-auto">
+          {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative z-10 order-2 lg:order-1 lg:-mt-8"
+            className="relative z-10"
           >
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-[#7D5A4C]/10 rounded-full mb-6">
@@ -198,7 +199,7 @@ const HeroSection = ({
             </div>
 
             {/* Main headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6">
+            <h1 className="font-serif text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6">
               <span className="gradient-text">Leg je zwangerschap</span>
               <br />
               <span className="gradient-text">voor altijd vast</span>
@@ -255,26 +256,25 @@ const HeroSection = ({
             </div>
           </motion.div>
 
-          {/* Image side - Desktop - centered vertically */}
+          {/* Image side - Desktop */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:flex order-1 lg:order-2 items-center justify-center"
+            className="relative flex items-center justify-center"
           >
             <div className="relative">
               {/* Decorative frame */}
               <div className="absolute -inset-4 bg-gradient-to-br from-[#C9A962]/20 to-[#7D5A4C]/10 rounded-[2.5rem] blur-xl" />
               
               {/* Image */}
-              <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl shadow-[#4A4239]/10 max-h-[75vh]">
+              <div className="relative aspect-[3/4] w-[380px] xl:w-[420px] rounded-[2rem] overflow-hidden shadow-2xl shadow-[#4A4239]/10">
                 <img
                   src={imageUrl || "/images/studio/DSC00571.JPG"}
                   alt="Zwangerschapsbeeldje"
                   className="w-full h-full object-cover object-center"
                   loading="eager"
                 />
-                {/* Subtle gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#4A4239]/20 via-transparent to-transparent" />
               </div>
               
@@ -290,43 +290,101 @@ const HeroSection = ({
               </div>
             </div>
           </motion.div>
+        </div>
 
-          {/* Mobile Image - Clearly visible below text */}
+        {/* MOBILE: Compact layout with smaller image */}
+        <div className="lg:hidden max-w-md mx-auto">
+          {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="relative lg:hidden order-1"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-6"
           >
-            <div className="relative max-w-sm mx-auto">
-              {/* Decorative glow */}
-              <div className="absolute -inset-2 bg-gradient-to-br from-[#C9A962]/30 to-[#7D5A4C]/20 rounded-3xl blur-xl" />
-              
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
-                <img
-                  src={imageUrl || "/images/studio/DSC00571.JPG"}
-                  alt="Zwangerschapsbeeldje"
-                  className="w-full h-full object-cover object-[center_25%]"
-                  loading="eager"
-                />
-              </div>
-              
-              {/* Mobile review badge */}
-              <div className="absolute -bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-[#D4C8B8]/30">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="flex items-center gap-1 mb-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 fill-[#C9A962] text-[#C9A962]" />
-                      ))}
-                    </div>
-                    <p className="text-[#4A4239] font-medium text-xs">"Nog mooier dan verwacht"</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-serif text-xl text-[#C9A962]">1300+</p>
-                    <p className="text-[#7D6A5A] text-[10px]">Beeldjes</p>
-                  </div>
+            {/* Badge */}
+            <div className="inline-flex items-center px-3 py-1.5 bg-[#7D5A4C]/10 rounded-full mb-4">
+              <Star className="w-3.5 h-3.5 text-[#C9A962] mr-1.5 fill-[#C9A962]" />
+              <span className="text-[#5A4A3D] text-xs font-medium">1300+ zwangerschappen</span>
+            </div>
+
+            {/* Main headline */}
+            <h1 className="font-serif text-4xl leading-[1.1] mb-4">
+              <span className="gradient-text">Leg je<br />zwangerschap<br />vast</span>
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-[#4A4239] text-sm font-medium mb-1">
+              Professioneel 3D-scantraject
+            </p>
+            <p className="text-[#5A4A3D] text-xs mb-4">
+              Alles inbegrepen — <span className="font-semibold text-[#7D5A4C]">zonder meerkosten</span>
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col gap-2 mb-5">
+              <a 
+                href={ctaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#7D5A4C] text-white rounded-full font-medium text-base"
+              >
+                {ctaText}
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
+              <Link 
+                to="/zwangerschapsbeeldje" 
+                className="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-[#7D5A4C] text-[#4A4239] rounded-full font-medium text-base"
+              >
+                Zie Collectie
+              </Link>
+            </div>
+
+            {/* Stats */}
+            <div className="flex items-center justify-center space-x-6">
+              <div className="text-center">
+                <div className="flex items-center justify-center gap-0.5 mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3 h-3 fill-[#C9A962] text-[#C9A962]" />
+                  ))}
                 </div>
+                <p className="text-[#7D6A5A] text-xs">5/5 <span className="font-medium">1300+</span> reviews</p>
+              </div>
+              <div className="w-px h-8 bg-[#D4C8B8]" />
+              <div className="text-center">
+                <p className="font-serif text-xl text-[#7D5A4C]">5-6</p>
+                <p className="text-[#7D6A5A] text-xs">Weken</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Mobile Image - Smaller, compact */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative max-w-[280px] mx-auto"
+          >
+            {/* Decorative glow */}
+            <div className="absolute -inset-2 bg-gradient-to-br from-[#C9A962]/20 to-[#7D5A4C]/15 rounded-2xl blur-lg" />
+            
+            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg">
+              <img
+                src={imageUrl || "/images/studio/DSC00571.JPG"}
+                alt="Zwangerschapsbeeldje"
+                className="w-full h-full object-cover object-center"
+                loading="eager"
+              />
+            </div>
+            
+            {/* Mini review badge */}
+            <div className="absolute -bottom-3 left-2 right-2 bg-white/95 backdrop-blur-sm rounded-lg p-2 shadow-lg border border-[#D4C8B8]/30">
+              <div className="flex items-center justify-center gap-3">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-2.5 h-2.5 fill-[#C9A962] text-[#C9A962]" />
+                  ))}
+                </div>
+                <p className="text-[#4A4239] font-medium text-[10px]">"Nog mooier dan verwacht"</p>
               </div>
             </div>
           </motion.div>
