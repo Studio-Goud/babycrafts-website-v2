@@ -191,16 +191,18 @@ const HeroSection = ({
       `}</style>
 
       <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-24">
-        {/* Mobile background image - semi transparent */}
+        {/* Mobile background image - uses same image as desktop but as subtle background */}
         <div 
-          className="absolute inset-0 lg:hidden opacity-[0.15] pointer-events-none"
+          className="absolute inset-0 lg:hidden opacity-[0.12] pointer-events-none"
           style={{
-            backgroundImage: `url(${imageUrl || "/images/studio/DSC00571.JPG"})`,
+            backgroundImage: `url("${imageUrl || '/images/studio/DSC00571.JPG'}")`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center top',
+            backgroundRepeat: 'no-repeat',
           }}
         />
-        <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-[#F3EFE8]/70 via-[#F3EFE8]/50 to-[#F3EFE8]" />
+        {/* Stronger gradient overlay for better text readability */}
+        <div className="absolute inset-0 lg:hidden bg-gradient-to-b from-[#F3EFE8]/60 via-[#F3EFE8]/40 to-[#F3EFE8]/90" />
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative">
           <motion.div
@@ -215,23 +217,23 @@ const HeroSection = ({
               <span className="text-[#5A4A3D] text-sm font-medium tracking-wide">1300+ zwangerschappen vastgelegd</span>
             </div>
 
-            {/* Main headline with gradient */}
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8">
+            {/* Main headline with gradient and text shadow for readability */}
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8 drop-shadow-sm">
               <span className="gradient-text">Leg je zwangerschap</span>
               <br />
               <span className="gradient-text">voor altijd vast</span>
             </h1>
 
-            {/* Subheadline */}
-            <div className="space-y-3 mb-10">
-              <p className="text-[#5A4A3D] text-lg md:text-xl leading-relaxed max-w-xl">
-                <span className="font-medium text-[#4A4239]">Professioneel 3D-scantraject</span> met premium afwerking.
+            {/* Subheadline - darker for readability on mobile */}
+            <div className="space-y-3 mb-10 relative z-10">
+              <p className="text-[#4A4239] text-lg md:text-xl leading-relaxed max-w-xl font-medium drop-shadow-sm">
+                Professioneel 3D-scantraject met premium afwerking.
               </p>
-              <p className="text-[#6B5A4D] text-lg">
+              <p className="text-[#5A4A3D] text-lg drop-shadow-sm">
                 Comfortabel, veilig en persoonlijk.
               </p>
-              <p className="text-[#7D6A5A] text-base">
-                Alles inbegrepen — <span className="font-medium text-[#C9A962]">zonder meerkosten</span>, inclusief 3D-scan.
+              <p className="text-[#4A4239] text-base drop-shadow-sm">
+                Alles inbegrepen — <span className="font-semibold text-[#7D5A4C]">zonder meerkosten</span>, inclusief 3D-scan.
               </p>
             </div>
 
@@ -247,7 +249,7 @@ const HeroSection = ({
               </Link>
               <Link 
                 to="/zwangerschapsbeeldje" 
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#7D5A4C]/30 text-[#5A4A3D] rounded-full font-medium text-lg hover:border-[#7D5A4C] hover:bg-[#7D5A4C]/5 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#F3EFE8]/80 backdrop-blur-sm border-2 border-[#7D5A4C] text-[#4A4239] rounded-full font-medium text-lg hover:bg-[#7D5A4C] hover:text-white transition-all duration-300 shadow-lg"
               >
                 Zie Collectie
               </Link>
