@@ -40,23 +40,19 @@ const Navigation = () => {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? 'bg-ivory/95 backdrop-blur-md shadow-soft py-3'
-            : 'bg-transparent py-5'
+          isScrolled || isMobileMenuOpen
+            ? 'bg-[#F3EFE8]/98 backdrop-blur-md shadow-sm py-3'
+            : 'bg-[#F3EFE8]/95 backdrop-blur-sm py-4'
         }`}
       >
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <span className={`font-serif text-xl md:text-2xl font-medium transition-colors ${
-                isScrolled ? 'text-brown-deep' : 'text-brown-deep'
-              }`}>
+              <span className="font-serif text-xl md:text-2xl font-medium text-[#4A4239]">
                 Babycrafts
               </span>
-              <span className={`text-xs md:text-sm font-medium transition-colors ${
-                isScrolled ? 'text-gold' : 'text-gold'
-              }`}>
+              <span className="text-xs md:text-sm font-medium text-[#C9A962]">
                 3D
               </span>
             </Link>
@@ -69,10 +65,8 @@ const Navigation = () => {
                   to={link.path}
                   className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
                     isActive(link.path)
-                      ? 'text-gold bg-gold/5'
-                      : isScrolled
-                      ? 'text-brown-deep/80 hover:text-brown-deep hover:bg-brown-deep/5'
-                      : 'text-brown-deep/80 hover:text-brown-deep hover:bg-brown-deep/5'
+                      ? 'text-[#C9A962] bg-[#C9A962]/10'
+                      : 'text-[#5A4A3D]/80 hover:text-[#4A4239] hover:bg-[#7D5A4C]/5'
                   }`}
                 >
                   {link.label}
@@ -86,18 +80,14 @@ const Navigation = () => {
                 href="https://wa.me/31620526806"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-2 rounded-full transition-all duration-300 ${
-                  isScrolled
-                    ? 'text-brown-deep hover:bg-taupe/30'
-                    : 'text-brown-deep hover:bg-taupe/30'
-                }`}
+                className="p-2 rounded-full text-[#5A4A3D] hover:bg-[#D4C8B8]/30 transition-all duration-300"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="w-5 h-5" />
               </a>
               <Link
                 to="/tarieven"
-                className="inline-flex items-center justify-center px-6 py-3 bg-gold text-white text-sm font-medium rounded-full transition-all duration-300 hover:bg-gold-dark hover:shadow-lg hover:shadow-gold/20"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#7D5A4C] text-white text-sm font-medium rounded-full transition-all duration-300 hover:bg-[#6B4E3D] hover:shadow-lg hover:shadow-[#7D5A4C]/20"
               >
                 Boek Afspraak
               </Link>
@@ -106,7 +96,7 @@ const Navigation = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-brown-deep hover:bg-taupe/30 transition-colors"
+              className="lg:hidden p-2 rounded-lg text-[#4A4239] hover:bg-[#D4C8B8]/30 transition-colors"
               aria-label={isMobileMenuOpen ? 'Sluit menu' : 'Open menu'}
             >
               {isMobileMenuOpen ? (
@@ -120,7 +110,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden absolute top-full left-0 right-0 bg-ivory/98 backdrop-blur-lg shadow-lg transition-all duration-300 overflow-hidden ${
+          className={`lg:hidden absolute top-full left-0 right-0 bg-[#F3EFE8] shadow-lg transition-all duration-300 overflow-hidden ${
             isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
@@ -131,17 +121,17 @@ const Navigation = () => {
                 to={link.path}
                 className={`block px-4 py-3 text-base font-medium rounded-xl transition-colors ${
                   isActive(link.path)
-                    ? 'text-gold bg-gold/10'
-                    : 'text-brown-deep/80 hover:text-brown-deep hover:bg-taupe/20'
+                    ? 'text-[#C9A962] bg-[#C9A962]/10'
+                    : 'text-[#5A4A3D] hover:text-[#4A4239] hover:bg-[#D4C8B8]/20'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="pt-4 border-t border-taupe">
+            <div className="pt-4 border-t border-[#D4C8B8]">
               <Link
                 to="/tarieven"
-                className="block w-full text-center inline-flex items-center justify-center px-8 py-4 bg-gold text-white font-medium rounded-full transition-all duration-300 hover:bg-gold-dark"
+                className="block w-full text-center px-8 py-4 bg-[#7D5A4C] text-white font-medium rounded-full transition-all duration-300 hover:bg-[#6B4E3D]"
               >
                 Boek Afspraak
               </Link>

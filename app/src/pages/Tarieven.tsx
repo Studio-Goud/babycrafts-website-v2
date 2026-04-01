@@ -324,11 +324,11 @@ const Tarieven = () => {
     },
     {
       question: 'Wanneer is het beste moment om een zwangerschapsbeeldje te laten maken?',
-      answer: 'De meeste vrouwen kiezen voor een scan tussen week 30 en 36 van hun zwangerschap. In deze periode is je buik mooi rond, terwijl je je meestal nog comfortabel genoeg voelt om te poseren. Ben je zwanger van een tweeling of groeit je buik sneller? Dan adviseren we om iets eerder te komen, rond week 28 tot 32. Is later ook mogelijk? Ja, maar houd er rekening mee dat je buik zwaarder kan aanvoelen en poseren minder comfortabel wordt.',
+      answer: 'De meeste vrouwen kiezen voor een scan tussen week 30 en 36 van hun zwangerschap. In deze periode is je buik mooi rond, terwijl je je meestal nog comfortabel genoeg voelt om te poseren. Ben je zwanger van een tweeling of groeit je buik sneller? Dan adviseren we om iets eerder te komen, rond week 28 tot 32.',
     },
     {
       question: 'Hoe werkt het maken van een zwangerschapsbeeldje?',
-      answer: 'Je komt langs in onze studio in Rotterdam (of we komen bij je thuis/in het ziekenhuis). Tijdens je afspraak begeleiden we je stap voor stap. We helpen je met de houding en nemen rustig de tijd zodat jij je op je gemak voelt. De scan zelf duurt slechts een paar minuten. Daarna kiezen jullie samen het formaat en de afwerking die het beste bij je past. Wij zorgen vervolgens voor de volledige nabewerking en afwerking.',
+      answer: 'Je komt langs in onze studio in Rotterdam (of we komen bij je thuis/in het ziekenhuis). Tijdens je afspraak begeleiden we je stap voor stap. We helpen je met de houding en nemen rustig de tijd zodat jij je op je gemak voelt. De scan zelf duurt slechts een paar minuten.',
     },
     {
       question: 'Doet het maken van een 3D scan pijn of is het veilig?',
@@ -348,7 +348,7 @@ const Tarieven = () => {
     },
     {
       question: 'Is een bezoek aan het ziekenhuis ook mogelijk?',
-      answer: 'Ja, we zijn gevestigd in het hart van Rotterdam, op korte afstand van Erasmus MC, Sophia Kinderziekenhuis, Ikazia Ziekenhuis, Maasstad Ziekenhuis en Sint Franciscus Gasthuis. Indien nodig kunnen we ook in het ziekenhuis langskomen. Zo zorgen we ervoor dat jouw zwangerschap altijd op een manier wordt vastgelegd die bij jou past.',
+      answer: 'Ja, we zijn gevestigd in het hart van Rotterdam, op korte afstand van Erasmus MC, Sophia Kinderziekenhuis, Ikazia Ziekenhuis, Maasstad Ziekenhuis en Sint Franciscus Gasthuis. Indien nodig kunnen we ook in het ziekenhuis langskomen.',
     },
     {
       question: 'Wat is het verschil tussen de verschillende materialen?',
@@ -369,6 +369,107 @@ const Tarieven = () => {
     {
       question: 'Hoe kan ik contact opnemen?',
       answer: 'Je kunt ons bereiken via WhatsApp op +31620526806, of via e-mail op info@babycrafts.nl. We reageren meestal binnen enkele uren op werkdagen.',
+    },
+    // Nieuwe FAQ items voor uitbreiding
+    {
+      question: 'Vanaf welke week kan ik een zwangerschapsbeeldje laten maken?',
+      answer: 'Je kunt vanaf week 20 van je zwangerschap een afspraak maken, maar het ideale moment ligt tussen week 28 en 36. In deze periode is je buik mooi rond en voel je je meestal nog comfortabel genoeg om te poseren.',
+    },
+    {
+      question: 'Kan ik met een tweeling ook een zwangerschapsbeeldje laten maken?',
+      answer: 'Absoluut! Een tweelingzwangerschap is juist extra bijzonder om vast te leggen. We adviseren om iets eerder te komen, rond week 28-32, omdat je buik dan nog comfortabel genoeg is om te poseren.',
+    },
+    {
+      question: 'Is de 3D-scan veilig voor mijn baby?',
+      answer: 'Ja, absoluut! De scan werkt met gestructureerd licht - geen straling, geen lasers, geen warmte. Het is net zo veilig als een gewone fotocamera. De technologie wordt ook gebruikt in de medische wereld.',
+    },
+    {
+      question: 'Hoe lang duurt het scannen?',
+      answer: 'De scan zelf duurt slechts 2-3 minuten. We nemen echter ruim de tijd voor de voorbereiding en verschillende poses. In totaal ben je ongeveer 30-45 minuten bij ons.',
+    },
+    {
+      question: 'Kan ik zelf de pose kiezen?',
+      answer: 'Zeker! Tijdens de afspraak bespreken we samen welke pose het beste bij je past. We hebben verschillende standaard poses, maar je kunt ook je eigen ideeën aandragen. We denken graag met je mee.',
+    },
+    {
+      question: 'Wat moet ik aandoen voor de scan?',
+      answer: 'Draag eenvoudige kleding die je makkelijk aan en uit kunt doen. De meeste vrouwen scannen in hun beha en onderbroek, of met een loszittend hemd dat we naar boven kunnen schuiven.',
+    },
+    {
+      question: 'Kan ik ook mijn partner meenemen?',
+      answer: 'Ja, zeker! Je partner is van harte welkom. Sommige koppels kiezen er zelfs voor om samen op het beeldje te komen - dat kan met onze Ouder & Kind collectie.',
+    },
+    {
+      question: 'Wat krijg ik er allemaal bij?',
+      answer: 'Al onze pakketten zijn all-inclusive: de 3D-scan, professionele nabewerking, keuze uit poses, en het gefinishte beeldje op een sokkel. Geen verborgen kosten!',
+    },
+    {
+      question: 'Wat is een sokkel en waarom heb ik die nodig?',
+      answer: 'Een sokkel is een voetstuk waarop je beeldje staat. Dit geeft je beeldje een mooie, afgewerkte uitstraling. Je kunt kiezen uit verschillende materialen: standaard, premium natuursteen, of een grotere pilaar.',
+    },
+    {
+      question: 'Hoe groot wordt mijn beeldje?',
+      answer: 'Dat bepaal je zelf! We hebben verschillende maten beschikbaar, vanaf 14 cm tot 20 cm voor zwangerschapsbeeldjes. De prijs is afhankelijk van de gekozen maat en het materiaal.',
+    },
+    {
+      question: 'Kan ik het beeldje ook cadeau geven?',
+      answer: 'Een zwangerschapsbeeldje is een prachtig cadeau! Je kunt een cadeaubon bestellen, zodat de ontvanger zelf kan bepalen wanneer en waar ze gescand wil worden.',
+    },
+    {
+      question: 'Wat als ik niet tevreden ben met het resultaat?',
+      answer: 'We doen er alles aan om ervoor te zorgen dat je tevreden bent. Je ontvangt een digitale preview voordat we het beeldje produceren. Hier kun je feedback op geven. Omdat het een op maat gemaakt product is, kunnen we helaas niet retourneren, maar we werken net zo lang door tot je tevreden bent.',
+    },
+    {
+      question: 'Kan ik ook een beeldje laten maken als ik al bevallen ben?',
+      answer: 'Ja, dat kan met onze Babybeeldjes collectie! Deze zijn speciaal ontworpen om je pasgeboren baby vast te leggen. Ideaal voor in de eerste weken na de bevalling.',
+    },
+    {
+      question: 'Wat is het verschil tussen een zwangerschaps- en babybeeldje?',
+      answer: 'Een zwangerschapsbeeldje legt je buik vast tijdens de zwangerschap. Een babybeeldje legt je pasgeboren baby vast. Beide zijn unieke herinneringen aan verschillende momenten in dit bijzondere proces.',
+    },
+    {
+      question: 'Kan ik ook met mijn kind(eren) op het beeldje?',
+      answer: 'Zeker! Met onze Ouder & Kind collectie kunnen we jou samen met je kind(eren) vastleggen. Dit kan met je partner, of alleen met je kind(eren).',
+    },
+    {
+      question: 'Kan ik ook met mijn hele gezin op het beeldje?',
+      answer: 'Ja, dat kan met onze Familiebeeldjes! Ideaal om de complete gezinsuitbreiding vast te leggen. We adviseren maximaal 4-5 personen voor het beste resultaat.',
+    },
+    {
+      question: 'Is er een verschil in kwaliteit tussen de materialen?',
+      answer: 'Alle materialen zijn van hoge kwaliteit, maar ze hebben elk hun eigen karakter. Arte-Lumina en Alba-Natura zijn lichtgewicht en gedetailleerd. Atelier-Bronze voelt zwaar en luxe aan. Gegoten Brons is onze topklasse - een echt erfstuk voor generaties.',
+    },
+    {
+      question: 'Hoelang gaat een beeldje mee?',
+      answer: 'Met de juiste verzorging gaat een beeldje je leven lang mee. De resin beeldjes (Arte-Lumina, Alba-Natura) zijn duurzaam maar iets kwetsbaarder. Brons beeldjes zijn extreem duurzaam en kunnen generaties meegaan.',
+    },
+    {
+      question: 'Hoe moet ik mijn beeldje verzorgen?',
+      answer: 'Eenvoudig: af en toe afstoffen met een droge doek. Geen agressieve schoonmaakmiddelen gebruiken. Bij brons beeldjes: af en toe poetsen met een zachte doek om de glans te behouden.',
+    },
+    {
+      question: 'Kan ik het beeldje ook laten verzenden?',
+      answer: 'Zeker! We verzenden je beeldje in een speciale beschermverpakking. Je kunt kiezen voor ophalen in onze studio in Rotterdam of verzending via een betrouwbare koerier.',
+    },
+    {
+      question: 'Wat zijn de verzendkosten?',
+      answer: 'Verzendkosten zijn afhankelijk van het formaat en gewicht van je beeldje. Voor kleinere beeldjes hanteren we standaard tarieven, voor grotere beeldjes maken we een offerte op maat.',
+    },
+    {
+      question: 'Kan ik ook in het weekend een afspraak maken?',
+      answer: 'Ja, we zijn ook in het weekend geopend. Je kunt eenvoudig zelf een datum en tijd kiezen via onze online agenda die 24/7 beschikbaar is.',
+    },
+    {
+      question: 'Hoe snel kan ik een afspraak krijgen?',
+      answer: 'Dat hangt af van de drukte, maar meestal kunnen we je binnen 1-2 weken al een afspraak aanbieden. Via onze online agenda zie je direct welke tijden beschikbaar zijn.',
+    },
+    {
+      question: 'Kan ik mijn afspraak verplaatsen?',
+      answer: 'Ja, dat kan. We vragen je om minimaal 24 uur van tevoren te laten weten als je wilt verplaatsen, zodat we de tijd voor een andere klant beschikbaar kunnen maken.',
+    },
+    {
+      question: 'Wat als ik me ziek voel op de dag van de afspraak?',
+      answer: 'Geen probleem! Bij ziekte kun je kosteloos verplaatsen. We vinden het belangrijk dat je je comfortabel voelt tijdens de scan, dus neem gerust contact op om te verplaatsen.',
     },
   ];
 

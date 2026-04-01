@@ -123,14 +123,14 @@ const Home = () => {
       <HeroSection />
 
       {/* Features - Wat ons uniek maakt */}
-      <section className="py-20 lg:py-28 bg-ivory">
+      <section className="py-20 lg:py-28 bg-[#FAF8F5]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <p className="text-gold font-medium text-sm tracking-wider uppercase mb-4">
+              <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-4">
                 Waarom Babycrafts
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-brown-deep mb-6">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#4A4239] mb-6">
                 Waar kunst, techniek en emotie samenkomen
               </h2>
             </div>
@@ -139,12 +139,12 @@ const Home = () => {
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {features.map((feature, idx) => (
               <StaggerItem key={idx}>
-                <div className="group bg-cream rounded-2xl p-8 transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
-                  <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold group-hover:scale-110 transition-all duration-500">
-                    <feature.icon className="w-7 h-7 text-gold group-hover:text-white transition-colors duration-500" />
+                <div className="group bg-[#F0EBE3] rounded-2xl p-8 transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+                  <div className="w-14 h-14 rounded-2xl bg-[#C9A962]/10 flex items-center justify-center mb-6 group-hover:bg-[#C9A962] group-hover:scale-110 transition-all duration-500">
+                    <feature.icon className="w-7 h-7 text-[#C9A962] group-hover:text-white transition-colors duration-500" />
                   </div>
-                  <h3 className="font-serif text-xl text-brown-deep mb-3">{feature.title}</h3>
-                  <p className="text-brown/70 text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="font-serif text-xl text-[#4A4239] mb-3">{feature.title}</h3>
+                  <p className="text-[#6B5A4D] text-sm leading-relaxed">{feature.description}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -153,19 +153,19 @@ const Home = () => {
       </section>
 
       {/* Over Babycrafts */}
-      <section className="py-20 lg:py-28 bg-beige">
+      <section className="py-20 lg:py-28 bg-[#F5F0E8]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <ScrollReveal>
                 <div>
-                  <p className="text-gold font-medium text-sm tracking-wider uppercase mb-4">
+                  <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-4">
                     Over Babycrafts
                   </p>
-                  <h2 className="font-serif text-3xl md:text-4xl text-brown-deep mb-6">
+                  <h2 className="font-serif text-3xl md:text-4xl text-[#4A4239] mb-6">
                     Zwangerschapsbeeldje laten maken waar kunst, techniek en emotie samenkomen
                   </h2>
-                  <div className="space-y-4 text-brown/80 leading-relaxed">
+                  <div className="space-y-4 text-[#6B5A4D] leading-relaxed">
                     <p>
                       Een zwangerschapsbeeldje is meer dan een object. Het is een tastbare herinnering aan een unieke periode in je leven. Bij Babycrafts 3D leggen we jouw zwangerschap vast met aandacht, vakmanschap en respect voor jouw lichaam en verhaal.
                     </p>
@@ -177,22 +177,22 @@ const Home = () => {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-6 mt-10 pt-10 border-t border-taupe">
+                  <div className="grid grid-cols-3 gap-6 mt-10 pt-10 border-t border-[#D4C8B8]">
                     {[
                       { nummer: '1300+', label: 'Beeldjes gerealiseerd' },
                       { nummer: '5/5', label: 'Google reviews' },
                       { nummer: '~5 á 6', label: 'Weken levertijd' },
                     ].map((stat, idx) => (
                       <div key={idx} className="text-center">
-                        <p className="font-serif text-2xl md:text-3xl text-gold mb-1">{stat.nummer}</p>
-                        <p className="text-brown/60 text-sm">{stat.label}</p>
+                        <p className="font-serif text-2xl md:text-3xl text-[#C9A962] mb-1">{stat.nummer}</p>
+                        <p className="text-[#7D6A5A] text-sm">{stat.label}</p>
                       </div>
                     ))}
                   </div>
 
                   <Link
                     to="/over-ons"
-                    className="inline-flex items-center mt-10 text-brown-deep font-medium hover:text-gold transition-colors"
+                    className="inline-flex items-center mt-10 text-[#4A4239] font-medium hover:text-[#C9A962] transition-colors"
                   >
                     Meer over ons
                     <ArrowRight className="ml-2 w-5 h-5" />
@@ -209,11 +209,11 @@ const Home = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="absolute -bottom-6 -left-6 bg-ivory rounded-2xl p-6 shadow-xl max-w-xs">
-                    <p className="font-serif text-brown-deep italic">
+                  <div className="absolute -bottom-6 -left-6 bg-[#FAF8F5] rounded-2xl p-6 shadow-xl max-w-xs">
+                    <p className="font-serif text-[#4A4239] italic">
                       "Dit is geen product. Het is een herinnering, tastbaar gemaakt."
                     </p>
-                    <p className="text-brown/60 text-sm mt-4">— Lindsay</p>
+                    <p className="text-[#7D6A5A] text-sm mt-4">— Lindsay</p>
                   </div>
                 </div>
               </ScrollReveal>
