@@ -292,14 +292,46 @@ const HeroSection = ({
           </motion.div>
         </div>
 
-        {/* MOBILE: Compact layout with smaller image */}
+        {/* MOBILE: Afbeelding bovenaan, tekst eronder */}
         <div className="lg:hidden max-w-md mx-auto">
-          {/* Text Content */}
+          {/* Mobile Image - Bovenaan */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="relative max-w-[240px] mx-auto mb-6"
+          >
+            {/* Decorative glow */}
+            <div className="absolute -inset-2 bg-gradient-to-br from-[#C9A962]/20 to-[#7D5A4C]/15 rounded-2xl blur-lg" />
+            
+            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg">
+              <img
+                src={imageUrl || "/images/studio/DSC00571.JPG"}
+                alt="Zwangerschapsbeeldje"
+                className="w-full h-full object-cover object-center"
+                loading="eager"
+              />
+            </div>
+            
+            {/* Mini review badge */}
+            <div className="absolute -bottom-3 left-2 right-2 bg-white/95 backdrop-blur-sm rounded-lg p-2 shadow-lg border border-[#D4C8B8]/30">
+              <div className="flex items-center justify-center gap-3">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-2.5 h-2.5 fill-[#C9A962] text-[#C9A962]" />
+                  ))}
+                </div>
+                <p className="text-[#4A4239] font-medium text-[10px]">"Nog mooier dan verwacht"</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Text Content - Onder de afbeelding */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-6"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-center"
           >
             {/* Badge */}
             <div className="inline-flex items-center px-3 py-1.5 bg-[#7D5A4C]/10 rounded-full mb-4">
@@ -353,38 +385,6 @@ const HeroSection = ({
               <div className="text-center">
                 <p className="font-serif text-xl text-[#7D5A4C]">5-6</p>
                 <p className="text-[#7D6A5A] text-xs">Weken</p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Mobile Image - Smaller, compact */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative max-w-[280px] mx-auto"
-          >
-            {/* Decorative glow */}
-            <div className="absolute -inset-2 bg-gradient-to-br from-[#C9A962]/20 to-[#7D5A4C]/15 rounded-2xl blur-lg" />
-            
-            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg">
-              <img
-                src={imageUrl || "/images/studio/DSC00571.JPG"}
-                alt="Zwangerschapsbeeldje"
-                className="w-full h-full object-cover object-center"
-                loading="eager"
-              />
-            </div>
-            
-            {/* Mini review badge */}
-            <div className="absolute -bottom-3 left-2 right-2 bg-white/95 backdrop-blur-sm rounded-lg p-2 shadow-lg border border-[#D4C8B8]/30">
-              <div className="flex items-center justify-center gap-3">
-                <div className="flex items-center gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-2.5 h-2.5 fill-[#C9A962] text-[#C9A962]" />
-                  ))}
-                </div>
-                <p className="text-[#4A4239] font-medium text-[10px]">"Nog mooier dan verwacht"</p>
               </div>
             </div>
           </motion.div>
