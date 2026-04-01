@@ -7,24 +7,48 @@ export default {
   theme: {
     extend: {
       colors: {
-        gold: {
-          DEFAULT: '#C9A962',
-          light: '#E8DFC8',
-          dark: '#B8984F',
+        // Nieuw rustig, vrouwelijk palet
+        ivory: {
+          DEFAULT: '#FAF8F5',
+          dark: '#F5F2ED',
         },
         beige: {
-          DEFAULT: '#F5F1EB',
-          dark: '#E8E0D4',
+          DEFAULT: '#F5F0E8',
+          light: '#FAF7F2',
+          dark: '#EBE5DB',
+          deeper: '#E5DED1',
         },
         cream: {
-          DEFAULT: '#FAF8F5',
-          dark: '#F0EDE8',
+          DEFAULT: '#F0EBE3',
+          light: '#F7F4EE',
+          dark: '#E8E2D8',
+        },
+        taupe: {
+          DEFAULT: '#D4C8B8',
+          light: '#E0D6C8',
+          dark: '#C4B8A8',
+        },
+        sand: {
+          DEFAULT: '#C9B8A0',
+          light: '#D9CBB8',
+          dark: '#B9A890',
         },
         brown: {
-          DEFAULT: '#3D3229',
-          light: '#5C4D3D',
-          dark: '#2A231C',
+          DEFAULT: '#7D7166',
+          light: '#9A8E82',
+          lighter: '#B5AA9F',
+          dark: '#5C5249',
+          deep: '#4A4239',
         },
+        gold: {
+          DEFAULT: '#C9A574',
+          light: '#D9BC94',
+          dark: '#B89260',
+          soft: '#DBC4A4',
+        },
+        // Legacy colors voor backward compatibility
+        'legacy-brown': '#3D3229',
+        'legacy-gold': '#C9A962',
       },
       fontFamily: {
         serif: ['Playfair Display', 'Georgia', 'serif'],

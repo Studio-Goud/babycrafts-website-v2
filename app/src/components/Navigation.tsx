@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,9 +39,9 @@ const Navigation = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-[#FAF8F5]/95 backdrop-blur-md shadow-sm py-3'
+            ? 'bg-ivory/95 backdrop-blur-md shadow-soft py-3'
             : 'bg-transparent py-5'
         }`}
       >
@@ -49,13 +49,13 @@ const Navigation = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <span className={`font-serif text-xl md:text-2xl font-semibold transition-colors ${
-                isScrolled ? 'text-[#3D3229]' : 'text-[#3D3229]'
+              <span className={`font-serif text-xl md:text-2xl font-medium transition-colors ${
+                isScrolled ? 'text-brown-deep' : 'text-brown-deep'
               }`}>
                 Babycrafts
               </span>
               <span className={`text-xs md:text-sm font-medium transition-colors ${
-                isScrolled ? 'text-[#C9A962]' : 'text-[#C9A962]'
+                isScrolled ? 'text-gold' : 'text-gold'
               }`}>
                 3D
               </span>
@@ -67,12 +67,12 @@ const Navigation = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-4 py-2 text-sm font-medium transition-colors rounded-full ${
+                  className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
                     isActive(link.path)
-                      ? 'text-[#C9A962]'
+                      ? 'text-gold bg-gold/5'
                       : isScrolled
-                      ? 'text-[#3D3229]/80 hover:text-[#3D3229]'
-                      : 'text-[#3D3229]/80 hover:text-[#3D3229]'
+                      ? 'text-brown-deep/80 hover:text-brown-deep hover:bg-brown-deep/5'
+                      : 'text-brown-deep/80 hover:text-brown-deep hover:bg-brown-deep/5'
                   }`}
                 >
                   {link.label}
@@ -83,19 +83,21 @@ const Navigation = () => {
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3">
               <a
-                href="tel:+31612345678"
-                className={`p-2 rounded-full transition-colors ${
+                href="https://wa.me/31620526806"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`p-2 rounded-full transition-all duration-300 ${
                   isScrolled
-                    ? 'text-[#3D3229] hover:bg-[#3D3229]/5'
-                    : 'text-[#3D3229] hover:bg-[#3D3229]/5'
+                    ? 'text-brown-deep hover:bg-taupe/30'
+                    : 'text-brown-deep hover:bg-taupe/30'
                 }`}
-                aria-label="Bel ons"
+                aria-label="WhatsApp"
               >
-                <Phone className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5" />
               </a>
               <Link
                 to="/tarieven"
-                className="btn-primary text-sm py-3 px-6"
+                className="inline-flex items-center justify-center px-6 py-3 bg-gold text-white text-sm font-medium rounded-full transition-all duration-300 hover:bg-gold-dark hover:shadow-lg hover:shadow-gold/20"
               >
                 Boek Afspraak
               </Link>
@@ -104,7 +106,7 @@ const Navigation = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-[#3D3229] hover:bg-[#3D3229]/5 transition-colors"
+              className="lg:hidden p-2 rounded-lg text-brown-deep hover:bg-taupe/30 transition-colors"
               aria-label={isMobileMenuOpen ? 'Sluit menu' : 'Open menu'}
             >
               {isMobileMenuOpen ? (
@@ -118,7 +120,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden absolute top-full left-0 right-0 bg-[#FAF8F5]/98 backdrop-blur-lg shadow-lg transition-all duration-300 overflow-hidden ${
+          className={`lg:hidden absolute top-full left-0 right-0 bg-ivory/98 backdrop-blur-lg shadow-lg transition-all duration-300 overflow-hidden ${
             isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
@@ -129,17 +131,17 @@ const Navigation = () => {
                 to={link.path}
                 className={`block px-4 py-3 text-base font-medium rounded-xl transition-colors ${
                   isActive(link.path)
-                    ? 'text-[#C9A962] bg-[#C9A962]/10'
-                    : 'text-[#3D3229]/80 hover:text-[#3D3229] hover:bg-[#3D3229]/5'
+                    ? 'text-gold bg-gold/10'
+                    : 'text-brown-deep/80 hover:text-brown-deep hover:bg-taupe/20'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="pt-4 border-t border-[#3D3229]/10">
+            <div className="pt-4 border-t border-taupe">
               <Link
                 to="/tarieven"
-                className="block w-full btn-primary text-center"
+                className="block w-full text-center inline-flex items-center justify-center px-8 py-4 bg-gold text-white font-medium rounded-full transition-all duration-300 hover:bg-gold-dark"
               >
                 Boek Afspraak
               </Link>

@@ -3,12 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --color-gold: #C9A962;
-  --color-gold-light: #E8DFC8;
-  --color-beige: #F5F1EB;
-  --color-cream: #FAF8F5;
-  --color-brown: #3D3229;
-  --color-brown-light: #5C4D3D;
+  /* Nieuw rustig, vrouwelijk palet */
+  --color-gold: #C9A574;
+  --color-gold-light: #D9BC94;
+  --color-gold-soft: #DBC4A4;
+  --color-beige: #F5F0E8;
+  --color-beige-light: #FAF7F2;
+  --color-beige-dark: #EBE5DB;
+  --color-cream: #F0EBE3;
+  --color-cream-light: #F7F4EE;
+  --color-ivory: #FAF8F5;
+  --color-taupe: #D4C8B8;
+  --color-sand: #C9B8A0;
+  --color-brown: #7D7166;
+  --color-brown-light: #9A8E82;
+  --color-brown-deep: #4A4239;
 }
 
 @layer base {
@@ -17,7 +26,7 @@
   }
   
   body {
-    @apply bg-[#F5F1EB] text-[#3D3229] antialiased;
+    @apply bg-beige text-brown-deep antialiased;
     font-family: 'Inter', system-ui, sans-serif;
   }
   
@@ -52,26 +61,30 @@
     background-color: var(--color-cream);
   }
   
+  .bg-ivory {
+    background-color: var(--color-ivory);
+  }
+  
   .border-gold {
     border-color: var(--color-gold);
   }
   
-  /* Button Styles */
+  /* Button Styles - nieuw zacht goud */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 bg-[#C9A962] text-white font-medium rounded-full transition-all duration-300 hover:bg-[#B8984F] hover:shadow-lg hover:shadow-[#C9A962]/25 hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-gold text-white font-medium rounded-full transition-all duration-300 hover:bg-gold-dark hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-[#3D3229] text-[#3D3229] font-medium rounded-full transition-all duration-300 hover:bg-[#3D3229] hover:text-white;
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-brown-deep text-brown-deep font-medium rounded-full transition-all duration-300 hover:bg-brown-deep hover:text-cream-light;
   }
   
   .btn-outline {
-    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-[#C9A962] text-[#C9A962] font-medium rounded-full transition-all duration-300 hover:bg-[#C9A962] hover:text-white;
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-gold text-gold font-medium rounded-full transition-all duration-300 hover:bg-gold hover:text-white;
   }
   
   /* Card Styles */
   .card {
-    @apply bg-[#FAF8F5] rounded-2xl shadow-sm transition-all duration-300 hover:shadow-xl;
+    @apply bg-ivory rounded-2xl shadow-sm transition-all duration-300 hover:shadow-xl;
   }
   
   /* Section Styles */
@@ -97,7 +110,7 @@
     @apply w-full min-h-[700px];
   }
   
-  /* Custom Scrollbar */
+  /* Custom Scrollbar - zacht taupe */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -107,12 +120,12 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: var(--color-gold);
+    background: var(--color-taupe);
     border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-brown);
+    background: var(--color-sand);
   }
 }
 
@@ -122,11 +135,15 @@
   }
   
   .gradient-gold {
-    background: linear-gradient(135deg, #C9A962 0%, #E8DFC8 100%);
+    background: linear-gradient(135deg, #C9A574 0%, #D9BC94 50%, #DBC4A4 100%);
   }
   
   .gradient-cream {
-    background: linear-gradient(180deg, #FAF8F5 0%, #F5F1EB 100%);
+    background: linear-gradient(180deg, #FAF8F5 0%, #F5F0E8 100%);
+  }
+  
+  .gradient-warm {
+    background: linear-gradient(135deg, #FAF8F5 0%, #F5F0E8 50%, #F0EBE3 100%);
   }
 }
 
