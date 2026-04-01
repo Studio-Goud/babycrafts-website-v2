@@ -237,9 +237,9 @@ const Ambacht = () => {
       {/* CTA */}
       <CTABlock
         title="Wil je meer weten over onze materialen?"
-        subtitle="We vertellen je graag alles over de mogelijkheden"
-        buttonText="Neem contact op"
-        buttonLink="/contact"
+        description="We vertellen je graag alles over de mogelijkheden"
+        ctaText="Neem contact op"
+        ctaLink="/contact"
       />
 
       <Footer />

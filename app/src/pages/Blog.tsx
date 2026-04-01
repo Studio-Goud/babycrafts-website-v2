@@ -192,9 +192,9 @@ const Blog = () => {
       {/* CTA */}
       <CTABlock
         title="Staat je vraag er niet tussen?"
-        subtitle="We beantwoorden hem graag persoonlijk"
-        buttonText="Neem contact op"
-        buttonLink="/contact"
+        description="We beantwoorden hem graag persoonlijk"
+        ctaText="Neem contact op"
+        ctaLink="/contact"
       />
 
       <Footer />

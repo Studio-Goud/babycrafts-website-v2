@@ -267,9 +267,9 @@ const Cadeaubon = () => {
       {/* CTA */}
       <CTABlock
         title="Klaar om iemand te verrassen?"
-        subtitle="Bestel nu een cadeaubon en geef een herinnering voor het leven"
-        buttonText="Bestel cadeaubon"
-        buttonLink="https://wa.me/31620526806?text=Hi!%20Ik%20wil%20graag%20een%20cadeaubon%20bestellen."
+        description="Bestel nu een cadeaubon en geef een herinnering voor het leven"
+        ctaText="Bestel cadeaubon"
+        ctaLink="https://wa.me/31620526806?text=Hi!%20Ik%20wil%20graag%20een%20cadeaubon%20bestellen."
       />
 
       <Footer />

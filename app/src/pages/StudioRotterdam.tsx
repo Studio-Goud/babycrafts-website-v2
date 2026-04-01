@@ -275,9 +275,9 @@ const StudioRotterdam = () => {
       {/* CTA */}
       <CTABlock
         title="Klaar om jouw zwangerschap vast te leggen?"
-        subtitle="Boek nu een afspraak in onze studio"
-        buttonText="Bekijk beschikbaarheid"
-        buttonLink="/tarieven"
+        description="Boek nu een afspraak in onze studio"
+        ctaText="Bekijk beschikbaarheid"
+        ctaLink="/tarieven"
       />
 
       <Footer />

@@ -332,9 +332,9 @@ const Werkwijze = () => {
       {/* CTA */}
       <CTABlock
         title="Benieuwd hoe jouw beeldje eruit zou zien?"
-        subtitle="Plan een vrijblijvende scan in onze studio"
-        buttonText="Boek een afspraak"
-        buttonLink="/tarieven"
+        description="Plan een vrijblijvende scan in onze studio"
+        ctaText="Boek een afspraak"
+        ctaLink="/tarieven"
       />
 
       <Footer />
