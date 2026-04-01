@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Send } from 'lucide-react';
+import { MapPin, Mail, Clock, Instagram, Facebook, Send, MessageCircle } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
@@ -53,7 +53,7 @@ const Contact = () => {
             </h1>
             <p className="text-white/70 text-lg">
               Heb je vragen? We helpen je graag. 
-              Bereik ons via telefoon, e-mail of WhatsApp.
+              Bereik ons via WhatsApp of e-mail.
             </p>
           </motion.div>
         </div>
@@ -64,7 +64,7 @@ const Contact = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-28">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Phone, title: 'Telefoon', content: '+31 6 12345678', link: 'tel:+31612345678' },
+              { icon: MessageCircle, title: 'WhatsApp', content: 'Direct chatten', link: 'https://wa.me/31620526806' },
               { icon: Mail, title: 'E-mail', content: 'info@babycrafts.nl', link: 'mailto:info@babycrafts.nl' },
               { icon: MapPin, title: 'Adres', content: 'Hooidrift 108, Rotterdam', link: '#' },
               { icon: Clock, title: 'Openingstijden', content: 'Op afspraak', link: '#' },
