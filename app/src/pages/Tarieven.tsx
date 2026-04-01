@@ -26,11 +26,6 @@ interface ProductPricing {
   image?: string;
 }
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
 const Tarieven = () => {
   useEffect(() => {
     document.title = pageSEO.tarieven.title;

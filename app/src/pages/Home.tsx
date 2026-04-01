@@ -204,7 +204,7 @@ const Home = () => {
                 <div className="relative">
                   <div className="aspect-[4/5] rounded-3xl overflow-hidden">
                     <img
-                      src="/images/studio/Lindsay portret 2.avif"
+                      src="/images/studio/DSC00491.webp"
                       alt="Lindsay van Rijn - Oprichtster Babycrafts 3D"
                       className="w-full h-full object-cover"
                     />
@@ -323,7 +323,7 @@ const Home = () => {
               <ScrollReveal>
                 <div className="aspect-[4/3] rounded-3xl overflow-hidden">
                   <img
-                    src="/images/studio/Studio art.avif"
+                    src="/images/studio/DSC00508.webp"
                     alt="Babycrafts Studio Rotterdam"
                     className="w-full h-full object-cover"
                   />
