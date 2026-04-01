@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Instagram, Facebook } from 'lucide-react';
+import { Mail, MapPin, Instagram, Facebook, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -108,11 +108,13 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="tel:+31612345678"
+                  href="https://wa.me/31620526806"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-[#F5F1EB]/70 text-sm hover:text-[#C9A962] transition-colors"
                 >
-                  <Phone className="w-5 h-5 text-[#C9A962]" />
-                  <span>+31 6 12345678</span>
+                  <MessageCircle className="w-5 h-5 text-[#C9A962]" />
+                  <span>WhatsApp</span>
                 </a>
               </li>
               <li>
@@ -126,8 +128,7 @@ const Footer = () => {
               </li>
             </ul>
             <div className="mt-6 p-4 bg-[#F5F1EB]/5 rounded-xl">
-              <p className="text-xs text-[#F5F1EB]/50 mb-2">KVK: 94348847</p>
-              <p className="text-xs text-[#F5F1EB]/50">BTW: NL002233445B01</p>
+              <p className="text-xs text-[#F5F1EB]/50">KVK: 94348847</p>
             </div>
           </div>
         </div>

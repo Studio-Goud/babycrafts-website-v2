@@ -1,12 +1,31 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Check, HelpCircle, Gift, ArrowRight, Star } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Check, HelpCircle, Gift, ArrowRight, Star, 
+  ChevronDown, ChevronUp, Info, Baby, Users, Heart
+} from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import CalendlyEmbed from '../components/CalendlyEmbed';
 import FAQ from '../components/FAQ';
 import { pageSEO } from '../lib/seo';
+
+interface PriceTier {
+  size: string;
+  price: string;
+  popular?: boolean;
+}
+
+interface ProductPricing {
+  name: string;
+  subtitle: string;
+  description: string;
+  basePrice: string;
+  tiers: PriceTier[];
+  features: string[];
+  calendlyUrl: string;
+  image?: string;
+}
 
 const Tarieven = () => {
   useEffect(() => {
@@ -15,22 +34,26 @@ const Tarieven = () => {
     if (meta) meta.setAttribute('content', pageSEO.tarieven.description);
   }, []);
 
-  const [selectedCategory, setSelectedCategory] = useState('zwangerschap');
+  const [openAccordion, setOpenAccordion] = useState<string | null>('zwangerschap');
 
-  const categories = [
-    { id: 'zwangerschap', label: 'Zwangerschap' },
-    { id: 'ouderkind', label: 'Ouder \u0026 Kind' },
-    { id: 'familie', label: 'Familie' },
-    { id: 'baby', label: 'Baby' },
-  ];
+  const toggleAccordion = (id: string) => {
+    setOpenAccordion(openAccordion === id ? null : id);
+  };
 
-  const pricing = {
+  const pricingData = {
     zwangerschap: [
       {
         name: 'Arte-Lumina',
-        subtitle: 'Populair',
-        price: '€199',
-        description: 'Onze bestseller - luxe zwangerschapsbeeldje met tijdloze uitstraling',
+        subtitle: 'Premium Resin',
+        description: 'Luxe zwangerschapsbeeldjes met een verfijnde, tijdloze uitstraling. Volledig gepersonaliseerd in houding, stijl en afwerking.',
+        basePrice: 'vanaf €199',
+        image: '/images/products/Arte Lumina 1.avif',
+        tiers: [
+          { size: '14 cm', price: '€199' },
+          { size: '16 cm', price: '€219', popular: true },
+          { size: '18 cm', price: '€239' },
+          { size: '20 cm', price: '€259' },
+        ],
         features: [
           'Professionele 3D-scan',
           'Digitale nabewerking',
@@ -39,30 +62,41 @@ const Tarieven = () => {
           '5-6 weken levertijd',
           'Verzending of ophalen',
         ],
-        popular: true,
         calendlyUrl: 'https://calendly.com/babycrafts/zwangerschapsbeeldje',
       },
       {
         name: 'Alba-Natura',
-        subtitle: 'Natuurlijk',
-        price: '€199',
-        description: 'Warme uitstraling met gecertificeerde houtvezel',
+        subtitle: 'Houtvezel Composiet',
+        description: 'Een natuurlijk zwangerschapsbeeldje met een warme, rustige uitstraling. Geprint met gecertificeerde houtvezel.',
+        basePrice: 'vanaf €199',
+        image: '/images/products/Alba Natura.avif',
+        tiers: [
+          { size: '14 cm', price: '€199' },
+          { size: '16 cm', price: '€219', popular: true },
+          { size: '18 cm', price: '€239' },
+          { size: '20 cm', price: '€259' },
+        ],
         features: [
           'Professionele 3D-scan',
-          'Digitale nabewerking',
-          'Keuze uit poses',
-          'Sokkel naar keuze',
-          'Eco-vriendelijk materiaal',
+          'Houtvezel composiet',
+          'Warme uitstraling',
+          'Eco-vriendelijk',
+          'Unieke textuur',
           '5-6 weken levertijd',
         ],
-        popular: false,
         calendlyUrl: 'https://calendly.com/babycrafts/zwangerschapsbeeldje',
       },
       {
         name: 'Atelier-Bronze',
-        subtitle: 'Statement',
-        price: '€569',
-        description: 'Krachtige uitstraling met laag echt brons of koper',
+        subtitle: 'Brons/Koper Afwerking',
+        description: 'Een krachtig statement met een massieve uitstraling. Afgewerkt met een dikke laag echt brons of koper.',
+        basePrice: 'vanaf €569',
+        image: '/images/products/Atelier Bronze.avif',
+        tiers: [
+          { size: '15 cm', price: '€569' },
+          { size: '17 cm', price: '€589', popular: true },
+          { size: '19 cm', price: '€629' },
+        ],
         features: [
           'Professionele 3D-scan',
           'Uitgebreide nabewerking',
@@ -71,14 +105,19 @@ const Tarieven = () => {
           'Echt brons/koper afwerking',
           '6-7 weken levertijd',
         ],
-        popular: false,
         calendlyUrl: 'https://calendly.com/babycrafts/zwangerschapsbeeldje',
       },
       {
         name: 'Gegoten Brons',
-        subtitle: 'Ultiem',
-        price: '€1.069',
-        description: '100% echt brons - een blijvend erfstuk',
+        subtitle: '100% Echt Brons',
+        description: 'Het ultieme bronzen zwangerschapsbeeldje, volledig gegoten uit echt brons. Tijdloos en bedoeld als blijvend erfstuk.',
+        basePrice: 'vanaf €1.069',
+        image: '/images/products/Gegoten Brons gepoetst goud afwerking.avif',
+        tiers: [
+          { size: '15 cm', price: '€1.069' },
+          { size: '17 cm', price: '€1.139', popular: true },
+          { size: '19 cm', price: '€1.189' },
+        ],
         features: [
           'Professionele 3D-scan',
           'Premium nabewerking',
@@ -88,123 +127,244 @@ const Tarieven = () => {
           '8-10 weken levertijd',
           'Certificaat van echtheid',
         ],
-        popular: false,
         calendlyUrl: 'https://calendly.com/babycrafts/zwangerschapsbeeldje',
       },
     ],
-    ouderkind: [
+    ouderKind: [
       {
-        name: 'Ouder \u0026 Kind Basis',
-        subtitle: 'Essential',
-        price: '€449',
-        description: 'Perfect voor moeder/ kind of vader/ kind',
+        name: 'Arte-Lumina Ouder(s) & Kind',
+        subtitle: 'Premium Resin',
+        description: 'Een bijzondere variant waarbij één of beide ouders samen met de baby worden vastgelegd. Een intieme, persoonlijke herinnering.',
+        basePrice: 'vanaf €349',
+        image: '/images/products/Ouder & Kind beeldje.avif',
+        tiers: [
+          { size: '15 cm', price: '€349' },
+          { size: '17 cm', price: '€389', popular: true },
+          { size: '19 cm', price: '€429' },
+        ],
         features: [
           'Professionele 3D-scan',
-          'Digitale nabewerking',
-          'Keuze uit poses',
+          'Ouder(s) + baby vastgelegd',
+          'Unieke verbinding vastgelegd',
+          'Premium afwerking',
           'Sokkel naar keuze',
           '5-6 weken levertijd',
         ],
-        popular: true,
-        calendlyUrl: 'https://calendly.com/babycrafts/ouder-kind',
+        calendlyUrl: 'https://calendly.com/babycrafts/ouder-kind-beeldje',
       },
       {
-        name: 'Ouder \u0026 Kind Premium',
-        subtitle: 'Deluxe',
-        price: '€649',
-        description: 'Met luxe afwerking en extra opties',
+        name: 'Atelier-Bronze Ouder(s) & Kind',
+        subtitle: 'Brons/Koper Afwerking',
+        description: 'De band tussen ouder en kind vastgelegd in massief brons of koper. Een krachtig statement voor generaties.',
+        basePrice: 'vanaf €649',
+        tiers: [
+          { size: '15 cm', price: '€649' },
+          { size: '17 cm', price: '€699', popular: true },
+          { size: '19 cm', price: '€749' },
+        ],
         features: [
           'Professionele 3D-scan',
-          'Uitgebreide nabewerking',
-          'Meerdere poses',
+          'Ouder(s) + baby vastgelegd',
+          'Echt brons/koper afwerking',
+          'Sculpturale uitstraling',
           'Premium sokkel',
-          'Extra grote afmeting',
           '6-7 weken levertijd',
         ],
-        popular: false,
-        calendlyUrl: 'https://calendly.com/babycrafts/ouder-kind',
+        calendlyUrl: 'https://calendly.com/babycrafts/ouder-kind-beeldje',
       },
-    ],
-    familie: [
       {
-        name: 'Familie Klein',
-        subtitle: '3-4 personen',
-        price: '€699',
-        description: 'Ideaal voor gezinnen met 1-2 kinderen',
-        features: [
-          'Professionele 3D-scan',
-          'Uitgebreide nabewerking',
-          'Meerdere poses proberen',
-          'Grote sokkel',
-          '6-8 weken levertijd',
+        name: 'Gegoten Brons Ouder(s) & Kind',
+        subtitle: '100% Echt Brons',
+        description: 'Het ultieme erfstuk: ouder en kind vereeuwigd in massief brons. Een blijvende herinnering voor generaties.',
+        basePrice: 'vanaf €989',
+        tiers: [
+          { size: '15 cm', price: '€989' },
+          { size: '17 cm', price: '€1.089', popular: true },
+          { size: '19 cm', price: '€1.189' },
         ],
-        popular: true,
-        calendlyUrl: 'https://calendly.com/babycrafts/familiebeeldje',
-      },
-      {
-        name: 'Familie Groot',
-        subtitle: '5+ personen',
-        price: '€999',
-        description: 'Voor grotere gezinnen inclusief opa \u0026 oma',
         features: [
           'Professionele 3D-scan',
-          'Premium nabewerking',
-          'Onbeperkte poses',
-          'XL sokkel',
-          'Extra grote afmeting',
+          'Ouder(s) + baby vastgelegd',
+          '100% echt brons',
+          'Galerie kwaliteit',
+          'Exclusieve sokkel',
+          'Certificaat van echtheid',
           '8-10 weken levertijd',
         ],
-        popular: false,
-        calendlyUrl: 'https://calendly.com/babycrafts/familiebeeldje',
+        calendlyUrl: 'https://calendly.com/babycrafts/ouder-kind-beeldje',
       },
     ],
     baby: [
       {
-        name: 'Newborn Beeldje',
-        subtitle: 'Essential',
-        price: '€349',
-        description: 'Vang de eerste momenten van je baby',
+        name: 'Arte-Lumina Babybeeldje',
+        subtitle: 'Premium Resin',
+        description: 'Het babybeeldje vangt het eerste begin — klein, kwetsbaar en volledig eigen. Een tastbare herinnering aan de periode ná de geboorte.',
+        basePrice: 'vanaf €349',
+        tiers: [
+          { size: '17 cm breed', price: '€349' },
+          { size: '20 cm breed', price: '€449', popular: true },
+        ],
         features: [
-          'Professionele 3D-scan',
-          'Digitale nabewerking',
-          'Slapende poses mogelijk',
+          'Professionele 3D-scan baby',
+          'Warme, zachte uitstraling',
+          '2 poses mogelijk',
           'Sokkel naar keuze',
           '5-6 weken levertijd',
         ],
-        popular: true,
         calendlyUrl: 'https://calendly.com/babycrafts/babybeeldje',
       },
       {
-        name: 'Newborn Deluxe',
-        subtitle: 'Premium',
-        price: '€549',
-        description: 'Met extra aandacht voor details',
+        name: 'Atelier-Bronze Babybeeldje',
+        subtitle: 'Brons/Koper Afwerking',
+        description: 'Je baby vastgelegd in een tijdloos bronzen of koperen beeldje. Een krachtig statement van het nieuwe leven.',
+        basePrice: 'vanaf €589',
+        tiers: [
+          { size: '17 cm breed', price: '€589' },
+          { size: '20 cm breed', price: '€689', popular: true },
+        ],
         features: [
-          'Professionele 3D-scan',
-          'Uitgebreide nabewerking',
-          'Meerdere poses',
+          'Professionele 3D-scan baby',
+          'Echt brons/koper afwerking',
+          'Sculpturale uitstraling',
           'Premium sokkel',
-          'Fotoalbum digitaal',
           '6-7 weken levertijd',
         ],
-        popular: false,
         calendlyUrl: 'https://calendly.com/babycrafts/babybeeldje',
+      },
+      {
+        name: 'Gegoten Brons Babybeeldje',
+        subtitle: '100% Echt Brons',
+        description: 'Het ultieme erfstuk: je baby vereeuwigd in massief brons. Een blijvende herinnering voor generaties.',
+        basePrice: 'vanaf €989',
+        tiers: [
+          { size: '17 cm breed', price: '€989' },
+          { size: '20 cm breed', price: '€1.189', popular: true },
+        ],
+        features: [
+          'Professionele 3D-scan baby',
+          '100% echt brons',
+          'Galerie kwaliteit',
+          'Exclusieve sokkel',
+          'Certificaat van echtheid',
+          '8-10 weken levertijd',
+        ],
+        calendlyUrl: 'https://calendly.com/babycrafts/babybeeldje',
+      },
+    ],
+    familie: [
+      {
+        name: 'Arte-Familia',
+        subtitle: 'Premium Resin - Gezinsbeeldje',
+        description: 'Het gezin vastgelegd in één beeldje. Een uniek kunstwerk dat de verbinding tussen alle gezinsleden toont.',
+        basePrice: '€349',
+        tiers: [
+          { size: '17 cm gezinsbeeldje compleet', price: '€349', popular: true },
+        ],
+        features: [
+          'Professionele 3D-scan',
+          'Complete gezinsopstelling',
+          'Premium afwerking',
+          'Sokkel naar keuze',
+          '5-6 weken levertijd',
+        ],
+        calendlyUrl: 'https://calendly.com/babycrafts/familiebeeldje',
+      },
+      {
+        name: 'Arte-Familia Atelier-Bronze',
+        subtitle: 'Brons/Koper - Gezinsbeeldje',
+        description: 'Het gezin vereeuwigd in massief brons of koper. Een krachtig statement van familieverbondenheid.',
+        basePrice: '€699',
+        tiers: [
+          { size: '17 cm gezinsbeeldje compleet', price: '€699', popular: true },
+        ],
+        features: [
+          'Professionele 3D-scan',
+          'Complete gezinsopstelling',
+          'Echt brons/koper afwerking',
+          'Premium sokkel',
+          '6-7 weken levertijd',
+        ],
+        calendlyUrl: 'https://calendly.com/babycrafts/familiebeeldje',
+      },
+      {
+        name: 'Arte-Familia Gegoten Brons',
+        subtitle: '100% Echt Brons - Gezinsbeeldje',
+        description: 'Het ultieme gezinsportret in massief brons. Een blijvend erfstuk voor generaties.',
+        basePrice: '€1.189',
+        tiers: [
+          { size: '17 cm gezinsbeeldje compleet', price: '€1.189', popular: true },
+        ],
+        features: [
+          'Professionele 3D-scan',
+          'Complete gezinsopstelling',
+          '100% echt brons',
+          'Exclusieve sokkel',
+          'Certificaat van echtheid',
+          '8-10 weken levertijd',
+        ],
+        calendlyUrl: 'https://calendly.com/babycrafts/familiebeeldje',
       },
     ],
   };
 
+  const sokkelPrices = [
+    { type: 'Standaard sokkel', price: '€15 - €25' },
+    { type: 'Premium natuursteen', price: '€25 - €39' },
+    { type: 'Grote sokkel / pilaar', price: 'Op aanvraag' },
+  ];
+
   const faqItems = [
     {
-      question: 'Zijn er verborgen kosten?',
-      answer: 'Nee, al onze prijzen zijn all-inclusive. Je betaalt geen extra voor de scan, nabewerking, of sokkel. Alleen verzending is optioneel.',
+      question: 'Wat is een zwangerschapsbeeldje precies?',
+      answer: 'Een zwangerschapsbeeldje is een tastbare herinnering aan jouw zwangerschap, gemaakt met een nauwkeurige 3D scan van je buik. Bij Babycrafts 3D leggen we niet alleen de vorm vast, maar ook de houding en de kleinste details. Zo ontstaat een persoonlijk beeldje dat écht bij je past, iets wat je later nog eens rustig bekijkt en opnieuw voelt.',
     },
     {
-      question: 'Kan ik in termijnen betalen?',
-      answer: 'Ja, we bieden de mogelijkheid om in 2 of 3 termijnen te betalen. Neem contact met ons op voor de mogelijkheden.',
+      question: 'Wanneer is het beste moment om een zwangerschapsbeeldje te laten maken?',
+      answer: 'De meeste vrouwen kiezen voor een scan tussen week 30 en 36 van hun zwangerschap. In deze periode is je buik mooi rond, terwijl je je meestal nog comfortabel genoeg voelt om te poseren. Ben je zwanger van een tweeling of groeit je buik sneller? Dan adviseren we om iets eerder te komen, rond week 28 tot 32. Is later ook mogelijk? Ja, maar houd er rekening mee dat je buik zwaarder kan aanvoelen en poseren minder comfortabel wordt.',
     },
     {
-      question: 'Wat als ik niet tevreden ben?',
-      answer: 'We doen er alles aan om je een prachtig beeldje te bezorgen. Mocht er iets niet naar wens zijn, neem dan contact met ons op. We vinden altijd een oplossing.',
+      question: 'Hoe werkt het maken van een zwangerschapsbeeldje?',
+      answer: 'Je komt langs in onze studio in Rotterdam (of we komen bij je thuis/in het ziekenhuis). Tijdens je afspraak begeleiden we je stap voor stap. We helpen je met de houding en nemen rustig de tijd zodat jij je op je gemak voelt. De scan zelf duurt slechts een paar minuten. Daarna kiezen jullie samen het formaat en de afwerking die het beste bij je past. Wij zorgen vervolgens voor de volledige nabewerking en afwerking.',
+    },
+    {
+      question: 'Doet het maken van een 3D scan pijn of is het veilig?',
+      answer: 'Nee, het maken van een zwangerschapsbeeldje is volledig veilig en pijnloos. We werken met een geavanceerde 3D scanner die alleen beelden vastlegt, zonder straling of aanraking. Het is een ontspannen moment waarin jij even stil kunt staan bij je zwangerschap.',
+    },
+    {
+      question: 'Moet ik iets voorbereiden voor mijn afspraak?',
+      answer: 'Je hoeft eigenlijk niets voor te bereiden. Wij begeleiden je stap voor stap tijdens de afspraak. Wel adviseren we om eenvoudige kleding te dragen die je makkelijk aan en uit kunt doen, zodat we je goed kunnen helpen met de houding.',
+    },
+    {
+      question: 'Hoe lang duurt de levertijd?',
+      answer: 'De levertijd is afhankelijk van het gekozen materiaal: Arte-Lumina en Alba-Natura hebben een levertijd van 5-6 weken, Atelier-Bronze 6-7 weken, en Gegoten Brons 8-10 weken. We houden je gedurende het hele proces op de hoogte.',
+    },
+    {
+      question: 'Kan ik ook thuis gescand worden?',
+      answer: 'Ja, zeker! We bieden de mogelijkheid om je zwangerschapsbeeldje thuis te laten maken. In alle rust, in je eigen omgeving. Thuisafspraken zijn altijd tegen een minimale vergoeding van €30 binnen geheel regio Zuid-Holland. We zijn actief in Rotterdam, Schiedam, Vlaardingen, Capelle aan den IJssel, Barendrecht, Ridderkerk, Delft, Den Haag, Dordrecht en de Drechtsteden.',
+    },
+    {
+      question: 'Is een bezoek aan het ziekenhuis ook mogelijk?',
+      answer: 'Ja, we zijn gevestigd in het hart van Rotterdam, op korte afstand van Erasmus MC, Sophia Kinderziekenhuis, Ikazia Ziekenhuis, Maasstad Ziekenhuis en Sint Franciscus Gasthuis. Indien nodig kunnen we ook in het ziekenhuis langskomen. Zo zorgen we ervoor dat jouw zwangerschap altijd op een manier wordt vastgelegd die bij jou past.',
+    },
+    {
+      question: 'Wat is het verschil tussen de verschillende materialen?',
+      answer: 'Arte-Lumina is onze luxe resin variant met een verfijnde, tijdloze uitstraling. Alba-Natura is gemaakt van gecertificeerde houtvezel met een warme, natuurlijke uitstraling. Atelier-Bronze heeft een dikke laag echt brons of koper en voelt zwaar en sculpturaal aan. Gegoten Brons is 100% massief brons - onze meest premium versie, bedoeld als blijvend erfstuk.',
+    },
+    {
+      question: 'Kan ik het beeldje retourneren?',
+      answer: 'Omdat elk beeldje volledig op maat wordt gemaakt op basis van jouw 3D-scan, is retourneren helaas niet mogelijk. We nemen echter alle tijd om tijdens het proces te zorgen dat je tevreden bent met het resultaat. Je ontvangt vooraf een digitale preview waarmee je kunt instemmen.',
+    },
+    {
+      question: 'Zijn de prijzen inclusief BTW?',
+      answer: 'Ja, alle prijzen zijn inclusief BTW. Er zijn geen verborgen kosten - wat je ziet is wat je betaalt.',
+    },
+    {
+      question: 'Kan ik een cadeaubon bestellen?',
+      answer: 'Ja, een cadeaubon is een prachtig cadeau voor een zwangere vriendin, collega of partner. Je kunt deze eenvoudig online bestellen en de ontvanger kan zelf een afspraak inplannen.',
+    },
+    {
+      question: 'Hoe kan ik contact opnemen?',
+      answer: 'Je kunt ons bereiken via WhatsApp op +31620526806, of via e-mail op info@babycrafts.nl. We reageren meestal binnen enkele uren op werkdagen.',
     },
   ];
 
@@ -212,226 +372,341 @@ const Tarieven = () => {
     <div className="min-h-screen bg-[#F5F1EB]">
       <Navigation />
 
-      {/* Header */}
-      <section className="bg-[#3D3229] text-white pt-32 pb-20">
+      {/* Hero */}
+      <section className="bg-[#3D3229] text-white py-20 lg:py-28">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-3">
-              Transparante prijzen
-            </p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6">
-              Tarieven
-            </h1>
-            <p className="text-white/70 text-lg">
-              Alle prijzen zijn all-inclusive. Geen verborgen kosten, 
-              geen verrassingen achteraf.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Category Tabs */}
-      <section className="bg-[#FAF8F5] border-b border-[#E8DFC8]">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-          <div className="flex flex-wrap justify-center gap-2 py-6">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
-                  selectedCategory === cat.id
-                    ? 'bg-[#C9A962] text-white'
-                    : 'bg-[#F5F1EB] text-[#3D3229]/70 hover:bg-[#E8DFC8]'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Cards */}
-      <section className="bg-[#FAF8F5]">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {pricing[selectedCategory as keyof typeof pricing]?.map((plan, index) => (
-              <motion.div
-                key={plan.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`relative bg-white rounded-3xl p-6 lg:p-8 ${
-                  plan.popular ? 'ring-2 ring-[#C9A962] shadow-xl' : 'shadow-sm'
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="bg-[#C9A962] text-white text-xs font-medium px-4 py-1 rounded-full flex items-center">
-                      <Star className="w-3 h-3 mr-1" />
-                      Meest gekozen
-                    </div>
-                  </div>
-                )}
-
-                <div className="mb-6">
-                  <p className="text-[#C9A962] text-xs font-medium tracking-wider uppercase">
-                    {plan.subtitle}
-                  </p>
-                  <h3 className="font-serif text-2xl text-[#3D3229] mt-1">{plan.name}</h3>
-                  <div className="mt-4">
-                    <span className="font-serif text-4xl text-[#3D3229]">{plan.price}</span>
-                  </div>
-                  <p className="text-[#3D3229]/60 text-sm mt-2">{plan.description}</p>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start">
-                      <Check className="w-5 h-5 text-[#C9A962] mr-3 flex-shrink-0 mt-0.5" />
-                      <span className="text-[#3D3229]/70 text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href={plan.calendlyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`block w-full text-center py-4 rounded-full font-medium transition-all ${
-                    plan.popular
-                      ? 'bg-[#C9A962] text-white hover:bg-[#B8984F]'
-                      : 'bg-[#F5F1EB] text-[#3D3229] hover:bg-[#E8DFC8]'
-                  }`}
-                >
-                  Boek nu
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Cadeaubon Section */}
-      <section id="cadeaubon" className="bg-[#F5F1EB]">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#C9A962]/10 mb-6">
-                <Gift className="w-7 h-7 text-[#C9A962]" />
-              </div>
-              
-              <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-3">
-                Cadeaubon
+              <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-4">
+                Transparante Prijzen
               </p>
-              <h2 className="font-serif text-3xl md:text-4xl text-[#3D3229] mb-6">
-                Het perfecte kraamcadeau
-              </h2>
-              <p className="text-[#3D3229]/70 leading-relaxed mb-6">
-                Geef iemand een ervaring cadeau die ze nooit zullen vergeten. 
-                Met onze cadeaubon geef je de vrijheid om zelf het perfecte moment 
-                en de ideale stijl te kiezen.
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6">
+                Tarieven Zwangerschapsbeeldjes
+              </h1>
+              <p className="text-white/70 text-lg max-w-2xl mx-auto">
+                Een zwangerschapsbeeldje is geen standaardproduct, maar een persoonlijk kunstobject. 
+                Daarom werken wij niet met losse prijsopslagen, maar met heldere all-in prijzen. 
+                Zo weet je waar je aan toe bent.
               </p>
-              
-              <ul className="space-y-3 mb-8">
-                {[
-                  'Geldig voor alle producten',
-                  'Geen vervaldatum',
-                  'In luxe geschenkverpakking',
-                  'Direct per e-mail of post',
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center">
-                    <Check className="w-5 h-5 text-[#C9A962] mr-3 flex-shrink-0" />
-                    <span className="text-[#3D3229]/80">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="https://calendly.com/babycrafts/cadeaubon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary inline-flex"
-              >
-                Bestel cadeaubon
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-[#C9A962]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Gift className="w-10 h-10 text-[#C9A962]" />
-                  </div>
-                  
-                  <p className="font-serif text-lg text-[#3D3229] mb-2">Babycrafts Cadeaubon</p>
-                  <p className="text-[#3D3229]/60 text-sm mb-6">Een uniek 3D beeldje cadeau</p>
-                  
-                  <div className="space-y-3">
-                    {['€100', '€200', '€399', 'Anders'].map((amount) => (
-                      <button
-                        key={amount}
-                        className="w-full py-3 border-2 border-[#E8DFC8] rounded-xl text-[#3D3229] font-medium hover:border-[#C9A962] hover:bg-[#C9A962]/5 transition-colors"
-                      >
-                        {amount}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Calendly Section */}
-      <section className="bg-[#3D3229] text-white">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-28">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center mb-12"
-          >
-            <HelpCircle className="w-12 h-12 text-[#C9A962] mx-auto mb-4" />
-            <h2 className="font-serif text-3xl md:text-4xl mb-4">
-              Boek direct je afspraak
-            </h2>
-            <p className="text-white/70">
-              Kies een datum en tijd die jou uitkomt. We kijken ernaar uit je te ontmoeten!
-            </p>
-          </motion.div>
-
+      {/* Pricing Accordion */}
+      <section className="py-20 lg:py-28">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-3xl overflow-hidden">
-              <CalendlyEmbed url="https://calendly.com/babycrafts/afspraak" />
+            {/* Zwangerschap */}
+            <div className="mb-4">
+              <button
+                onClick={() => toggleAccordion('zwangerschap')}
+                className="w-full flex items-center justify-between p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#C9A962]/10 flex items-center justify-center">
+                    <Heart className="w-6 h-6 text-[#C9A962]" />
+                  </div>
+                  <div className="text-left">
+                    <h2 className="font-serif text-xl text-[#3D3229]">Zwangerschapsbeeldjes</h2>
+                    <p className="text-[#3D3229]/60 text-sm">Vanaf €199</p>
+                  </div>
+                </div>
+                {openAccordion === 'zwangerschap' ? (
+                  <ChevronUp className="w-6 h-6 text-[#C9A962]" />
+                ) : (
+                  <ChevronDown className="w-6 h-6 text-[#C9A962]" />
+                )}
+              </button>
+              
+              <AnimatePresence>
+                {openAccordion === 'zwangerschap' && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="p-6 pt-0">
+                      {pricingData.zwangerschap.map((product, idx) => (
+                        <ProductCard key={idx} product={product} />
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Ouder & Kind */}
+            <div className="mb-4">
+              <button
+                onClick={() => toggleAccordion('ouderKind')}
+                className="w-full flex items-center justify-between p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#C9A962]/10 flex items-center justify-center">
+                    <Users className="w-6 h-6 text-[#C9A962]" />
+                  </div>
+                  <div className="text-left">
+                    <h2 className="font-serif text-xl text-[#3D3229]">Ouder(s) & Kind</h2>
+                    <p className="text-[#3D3229]/60 text-sm">Vanaf €349</p>
+                  </div>
+                </div>
+                {openAccordion === 'ouderKind' ? (
+                  <ChevronUp className="w-6 h-6 text-[#C9A962]" />
+                ) : (
+                  <ChevronDown className="w-6 h-6 text-[#C9A962]" />
+                )}
+              </button>
+              
+              <AnimatePresence>
+                {openAccordion === 'ouderKind' && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="p-6 pt-0">
+                      {pricingData.ouderKind.map((product, idx) => (
+                        <ProductCard key={idx} product={product} />
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Baby */}
+            <div className="mb-4">
+              <button
+                onClick={() => toggleAccordion('baby')}
+                className="w-full flex items-center justify-between p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#C9A962]/10 flex items-center justify-center">
+                    <Baby className="w-6 h-6 text-[#C9A962]" />
+                  </div>
+                  <div className="text-left">
+                    <h2 className="font-serif text-xl text-[#3D3229]">Babybeeldjes</h2>
+                    <p className="text-[#3D3229]/60 text-sm">Vanaf €349</p>
+                  </div>
+                </div>
+                {openAccordion === 'baby' ? (
+                  <ChevronUp className="w-6 h-6 text-[#C9A962]" />
+                ) : (
+                  <ChevronDown className="w-6 h-6 text-[#C9A962]" />
+                )}
+              </button>
+              
+              <AnimatePresence>
+                {openAccordion === 'baby' && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="p-6 pt-0">
+                      {pricingData.baby.map((product, idx) => (
+                        <ProductCard key={idx} product={product} />
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Familie */}
+            <div className="mb-4">
+              <button
+                onClick={() => toggleAccordion('familie')}
+                className="w-full flex items-center justify-between p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#C9A962]/10 flex items-center justify-center">
+                    <Users className="w-6 h-6 text-[#C9A962]" />
+                  </div>
+                  <div className="text-left">
+                    <h2 className="font-serif text-xl text-[#3D3229]">Arte-Familia (Gezinsbeeldje)</h2>
+                    <p className="text-[#3D3229]/60 text-sm">Vanaf €349</p>
+                  </div>
+                </div>
+                {openAccordion === 'familie' ? (
+                  <ChevronUp className="w-6 h-6 text-[#C9A962]" />
+                ) : (
+                  <ChevronDown className="w-6 h-6 text-[#C9A962]" />
+                )}
+              </button>
+              
+              <AnimatePresence>
+                {openAccordion === 'familie' && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="p-6 pt-0">
+                      {pricingData.familie.map((product, idx) => (
+                        <ProductCard key={idx} product={product} />
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>
       </section>
 
-      <FAQ items={faqItems} />
+      {/* Sokkel Prijzen */}
+      <section className="bg-[#FAF8F5] py-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-10">
+              <Info className="w-8 h-8 text-[#C9A962] mx-auto mb-4" />
+              <h2 className="font-serif text-2xl text-[#3D3229] mb-2">Sokkel Prijzen</h2>
+              <p className="text-[#3D3229]/60">Elk beeldje verdient een passende sokkel</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+              {sokkelPrices.map((sokkel, idx) => (
+                <div
+                  key={idx}
+                  className={`flex justify-between items-center p-4 ${
+                    idx !== sokkelPrices.length - 1 ? 'border-b border-[#E8DFC8]' : ''
+                  }`}
+                >
+                  <span className="text-[#3D3229]">{sokkel.type}</span>
+                  <span className="font-medium text-[#C9A962]">{sokkel.price}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking Section */}
+      <section id="booking" className="py-20 lg:py-28">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl md:text-4xl text-[#3D3229] mb-4">
+                Plan Je Afspraak
+              </h2>
+              <p className="text-[#3D3229]/70">
+                Kies een datum en tijd die jou uitkomt. We zien ernaar uit je te verwelkomen!
+              </p>
+            </div>
+            <CalendlyEmbed url="https://calendly.com/babycrafts/afspraak" />
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-[#FAF8F5] py-20 lg:py-28">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <HelpCircle className="w-8 h-8 text-[#C9A962] mx-auto mb-4" />
+              <h2 className="font-serif text-3xl md:text-4xl text-[#3D3229] mb-4">
+                Veelgestelde Vragen
+              </h2>
+              <p className="text-[#3D3229]/70">
+                Alles wat je wilt weten voordat je een zwangerschapsbeeldje laat maken
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              {faqItems.map((faq, idx) => (
+                <FAQ key={idx} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>
+  );
+};
+
+// Product Card Component
+interface ProductCardProps {
+  product: ProductPricing;
+}
+
+const ProductCard = ({ product }: ProductCardProps) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="bg-[#F5F1EB] rounded-2xl p-6 mt-4"
+    >
+      <div className="grid md:grid-cols-2 gap-6">
+        {/* Left: Info */}
+        <div>
+          <h3 className="font-serif text-xl text-[#3D3229] mb-1">{product.name}</h3>
+          <p className="text-[#C9A962] text-sm mb-3">{product.subtitle}</p>
+          <p className="text-[#3D3229]/70 text-sm mb-4">{product.description}</p>
+          
+          <div className="space-y-2 mb-4">
+            {product.features.map((feature, idx) => (
+              <div key={idx} className="flex items-center gap-2">
+                <Check className="w-4 h-4 text-[#C9A962]" />
+                <span className="text-sm text-[#3D3229]/70">{feature}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Right: Pricing Tiers */}
+        <div>
+          <p className="text-sm text-[#3D3229]/60 mb-3">Kies je maat:</p>
+          <div className="space-y-2">
+            {product.tiers.map((tier, idx) => (
+              <div
+                key={idx}
+                className={`flex justify-between items-center p-3 rounded-xl ${
+                  tier.popular 
+                    ? 'bg-[#C9A962] text-white' 
+                    : 'bg-white'
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  <span className={tier.popular ? 'text-white' : 'text-[#3D3229]'}>
+                    {tier.size}
+                  </span>
+                  {tier.popular && (
+                    <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">
+                      Populair
+                    </span>
+                  )}
+                </div>
+                <span className={`font-medium ${tier.popular ? 'text-white' : 'text-[#C9A962]'}`}>
+                  {tier.price}
+                </span>
+              </div>
+            ))}
+          </div>
+          
+          <a
+            href={product.calendlyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary w-full mt-4 flex items-center justify-center gap-2"
+          >
+            Boek deze variant
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 
