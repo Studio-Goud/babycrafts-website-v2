@@ -185,7 +185,7 @@ const GoogleReviews = () => {
             </AnimatePresence>
           </div>
 
-          <{/* Navigation */}
+          {/* Navigation */}
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={() => paginate(-1)}
