@@ -1,9 +1,7 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  Hammer, Gem, Award, Heart, Users, Sparkles,
-  ArrowRight, CheckCircle2, Quote
+  Users, CheckCircle2, Quote
 } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';

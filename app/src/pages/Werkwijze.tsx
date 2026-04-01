@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Scan, Cpu, Palette, Package, Sparkles, Camera,
-  ArrowRight, ChevronDown, ChevronUp, Clock, CheckCircle2
+  ChevronDown, ChevronUp, Clock, CheckCircle2
 } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import ScrollReveal, { StaggerContainer, StaggerItem } from '../components/ScrollReveal';
+import ScrollReveal from '../components/ScrollReveal';
 import CTABlock from '../components/CTABlock';
 import { pageSEO } from '../lib/seo';
 
