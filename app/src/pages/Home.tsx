@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Heart, Shield, Clock, Award, MapPin } from 'lucide-react';
+import { ArrowRight, Heart, Shield, Clock, Award, MapPin, Star, Check } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
@@ -22,15 +22,17 @@ const Home = () => {
       title: 'Arte-Lumina',
       subtitle: 'Onze bestseller',
       description: 'Luxe zwangerschapsbeeldjes met een verfijnde, tijdloze uitstraling. Volledig gepersonaliseerd in houding, stijl en afwerking.',
-      price: '€399',
+      price: '€199',
+      imageUrl: '/images/products/Arte Lumina 1.avif',
       link: '/zwangerschapsbeeldje',
       features: ['Volledig gepersonaliseerd', 'Premium afwerking', 'Inclusief 3D-scan'],
     },
     {
       title: 'Alba-Natura',
-      subtitle: 'Natuurlijk \u0026 warm',
+      subtitle: 'Natuurlijk & warm',
       description: 'Een natuurlijk zwangerschapsbeeldje met een warme uitstraling. Geprint met gecertificeerde houtvezel.',
-      price: '€299',
+      price: '€199',
+      imageUrl: '/images/products/Alba Natura.avif',
       link: '/zwangerschapsbeeldje',
       features: ['Houtvezel composiet', 'Warme uitstraling', 'Eco-vriendelijk'],
     },
@@ -38,7 +40,8 @@ const Home = () => {
       title: 'Atelier-Bronze',
       subtitle: 'Statement piece',
       description: 'Een krachtig statement met massieve uitstraling. Afgewerkt met een dikke laag echt brons of koper.',
-      price: '€599',
+      price: '€569',
+      imageUrl: '/images/products/Atelier Bronze.avif',
       link: '/zwangerschapsbeeldje',
       features: ['Echt brons/koper', 'Zware kwaliteit', 'Sculpturaal'],
     },
@@ -46,7 +49,8 @@ const Home = () => {
       title: 'Gegoten Brons',
       subtitle: 'Ultieme luxe',
       description: 'Het ultieme bronzen zwangerschapsbeeldje, volledig gegoten uit echt brons. Een blijvend erfstuk.',
-      price: '€1.299',
+      price: '€1.069',
+      imageUrl: '/images/products/Gegoten Brons gepoetst goud afwerking.avif',
       link: '/zwangerschapsbeeldje',
       features: ['100% Echt brons', 'Erfstuk kwaliteit', 'Hand gepatineerd'],
     },
@@ -96,6 +100,12 @@ const Home = () => {
     },
   ];
 
+  const studioImages = [
+    '/images/studio/DSC00589.JPG',
+    '/images/studio/DSC00620.JPG',
+    '/images/studio/DSC00628.JPG',
+  ];
+
   return (
     <div className="min-h-screen bg-[#F5F1EB]">
       <Navigation />
@@ -105,6 +115,7 @@ const Home = () => {
         description="Professioneel 3D-scantraject met premium afwerking. Comfortabel, veilig en persoonlijk. Alles inbegrepen — zonder meerkosten, inclusief 3D-scan."
         ctaText="Boek je Afspraak"
         ctaLink="/tarieven"
+        imageUrl="/images/products/Arte Lumina 2.avif"
       />
 
       {/* Features Section */}
@@ -164,170 +175,145 @@ const Home = () => {
               Onze Collectie
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#3D3229] mb-6">
-              Premium Materialen \u0026 Afwerkingen
+              Premium 3D Beeldjes
             </h2>
-            <p className="text-[#3D3229]/70 max-w-2xl mx-auto">
-              Elk beeldje wordt met de hand afgewerkt in ons atelier. 
-              Kies de stijl die bij jou past.
+            <p className="text-[#3D3229]/70 text-lg max-w-2xl mx-auto">
+              Van natuurlijke houtvezel tot massief brons. Kies het materiaal dat bij jou past.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {products.map((product, index) => (
-              <ProductCard key={product.title} {...product} index={index} />
+              <ProductCard key={index} {...product} index={index} />
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Link to="/tarieven" className="btn-secondary">
-              Bekijk alle tarieven
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="bg-[#3D3229] text-white">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-28">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mt-12"
           >
-            <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-3">
-              Onze Werkwijze
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl">
-              Jouw reis naar een tijdloos kunstwerk
-            </h2>
+            <Link to="/tarieven" className="btn-primary inline-flex">
+              Bekijk alle tarieven
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
           </motion.div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { step: '01', title: 'Afspraak Plannen', desc: 'Kies eenvoudig een tijdstip dat past, thuis, in de studio of in het ziekenhuis.' },
-              { step: '02', title: 'Warm Ontvangst', desc: 'Wanneer je bij ons binnenkomt, zorgen we voor een rustige sfeer. We bespreken samen de pose en stijl.' },
-              { step: '03', title: 'Veilige 3D-scan', desc: 'De scan is volledig veilig, contactloos en binnen enkele minuten voltooid.' },
-              { step: '04', title: 'Digitale Verfijning', desc: 'Na het scannen optimaliseren we het model met zorg tot in de kleinste details.' },
-              { step: '05', title: 'Ambachtelijke Afwerking', desc: 'Jouw beeldje wordt vervaardigd in het gekozen materiaal en volledig met de hand afgewerkt.' },
-              { step: '06', title: 'Oplevering', desc: 'Ophalen in de studio of verzending in beschermverpakking. Een speciaal moment.' },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
-              >
-                <span className="text-5xl font-serif text-[#C9A962]/20 absolute -top-4 -left-2">
-                  {item.step}
-                </span>
-                <h3 className="font-serif text-xl mb-3 relative z-10">{item.title}</h3>
-                <p className="text-white/70 text-sm leading-relaxed relative z-10">{item.desc}</p>
-              </motion.div>
-            ))}
+      {/* Process Section with Images */}
+      <section className="bg-[#3D3229] text-white overflow-hidden">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-28">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-4">
+                Het Proces
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-6">
+                Van scan naar kunstwerk
+              </h2>
+              <p className="text-white/70 text-lg leading-relaxed mb-8">
+                Het maken van een zwangerschapsbeeldje begint altijd met een afspraak waarin rust en vertrouwen centraal staan. Tijdens deze sessie nemen we de tijd om verschillende houdingen, poses en details te verkennen.
+              </p>
+
+              <div className="space-y-4">
+                {[
+                  'Professionele 3D-scan in onze studio',
+                  'Digitale nabewerking en verfijning',
+                  'Ambachtelijke productie en afwerking',
+                  'Oplevering binnen 5-6 weken',
+                ].map((step, index) => (
+                  <div key={index} className="flex items-center">
+                    <div className="w-8 h-8 rounded-full bg-[#C9A962]/20 flex items-center justify-center mr-4">
+                      <Check className="w-4 h-4 text-[#C9A962]" />
+                    </div>
+                    <span className="text-white/80">{step}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="grid grid-cols-2 gap-4"
+            >
+              {studioImages.map((img, idx) => (
+                <div key={idx} className={`rounded-2xl overflow-hidden ${idx === 0 ? 'col-span-2 aspect-[16/9]' : 'aspect-square'}`}>
+                  <img
+                    src={img}
+                    alt={`Studio impressie ${idx + 1}`}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Location Section */}
+      {/* Ouder & Kind Preview */}
       <section className="bg-[#FAF8F5]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-28">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="order-2 lg:order-1"
             >
-              <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-3">
-                Op Locatie
-              </p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#3D3229] mb-6">
-                Zwangerschapsbeeldje in de studio, thuis of het ziekenhuis
-              </h2>
-              <p className="text-[#3D3229]/70 leading-relaxed mb-6">
-                Niet iedereen voelt zich prettig bij een studiosessie. Daarom bieden wij ook 
-                de mogelijkheid om je zwangerschapsbeeldje thuis te laten maken. In alle rust, 
-                in je eigen omgeving.
-              </p>
-              <p className="text-[#3D3229]/70 leading-relaxed mb-8">
-                Daarnaast zijn wij gevestigd in het hart van Rotterdam, op korte afstand van 
-                onder andere Erasmus MC, Sophia Kinderziekenhuis, Ikazia Ziekenhuis, 
-                Maasstad Ziekenhuis en Sint Franciscus Gasthuis.
-              </p>
-              <Link to="/contact" className="btn-primary">
-                Plan je bezoek
-              </Link>
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="/images/products/Ouder & Kind beeldje.avif"
+                  alt="Ouder en Kind beeldje"
+                  className="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative"
+              className="order-1 lg:order-2"
             >
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-[#E8DFC8]">
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-16 h-16 text-[#C9A962] mx-auto mb-4" />
-                    <p className="font-serif text-2xl text-[#3D3229]">Hooidrift 108</p>
-                    <p className="text-[#3D3229]/60">3023 KV Rotterdam</p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-[#C9A962] font-medium text-sm tracking-wider uppercase mb-4">
+                Ouder & Kind
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#3D3229] mb-6">
+                De band vastgelegd in 3D
+              </h2>
+              <p className="text-[#3D3229]/70 text-lg leading-relaxed mb-8">
+                Naast zwangerschapsbeeldjes maken we ook prachtige 3D beeldjes van ouder en kind samen. 
+                Een uniek aandenken aan de speciale verbinding tussen jullie.
+              </p>
+              <Link to="/ouder-en-kind-beeldje" className="btn-primary inline-flex">
+                Ontdek Ouder & Kind
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Quote Section */}
-      <section className="bg-[#C9A962] text-white">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-28">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <Heart className="w-12 h-12 mx-auto mb-8 opacity-50" />
-            <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl leading-relaxed mb-8">
-              "Dit is geen product. Het is een herinnering, tastbaar gemaakt."
-            </blockquote>
-            
-            <div className="flex items-center justify-center space-x-8">
-              <div className="text-center">
-                <p className="font-serif text-3xl">1000+</p>
-                <p className="text-white/70 text-sm">Beeldjes gerealiseerd</p>
-              </div>
-              <div className="w-px h-12 bg-white/30" />
-              <div className="text-center">
-                <p className="font-serif text-3xl">5/5</p>
-                <p className="text-white/70 text-sm">Google reviews</p>
-              </div>
-              <div className="w-px h-12 bg-white/30" />
-              <div className="text-center">
-                <p className="font-serif text-3xl">~5 á 6</p>
-                <p className="text-white/70 text-sm">Weken levertijd</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Testimonials */}
+      <Testimonials testimonials={testimonials} />
 
-      <Testimonials items={testimonials} />
-
-      <CTABlock
-        title="Klaar om jouw zwangerschap te laten vastleggen?"
-        description="Je zwangerschap is uniek. Je beeldje ook."
-        ctaText="Boek je Afspraak"
-        ctaLink="/tarieven"
-      />
+      {/* CTA Block */}
+      <CTABlock />
 
       <Footer />
     </div>

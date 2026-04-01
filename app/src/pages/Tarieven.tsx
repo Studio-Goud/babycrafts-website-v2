@@ -29,7 +29,7 @@ const Tarieven = () => {
       {
         name: 'Arte-Lumina',
         subtitle: 'Populair',
-        price: '€399',
+        price: '€199',
         description: 'Onze bestseller - luxe zwangerschapsbeeldje met tijdloze uitstraling',
         features: [
           'Professionele 3D-scan',
@@ -45,7 +45,7 @@ const Tarieven = () => {
       {
         name: 'Alba-Natura',
         subtitle: 'Natuurlijk',
-        price: '€299',
+        price: '€199',
         description: 'Warme uitstraling met gecertificeerde houtvezel',
         features: [
           'Professionele 3D-scan',
@@ -61,7 +61,7 @@ const Tarieven = () => {
       {
         name: 'Atelier-Bronze',
         subtitle: 'Statement',
-        price: '€599',
+        price: '€569',
         description: 'Krachtige uitstraling met laag echt brons of koper',
         features: [
           'Professionele 3D-scan',
@@ -77,7 +77,7 @@ const Tarieven = () => {
       {
         name: 'Gegoten Brons',
         subtitle: 'Ultiem',
-        price: '€1.299',
+        price: '€1.069',
         description: '100% echt brons - een blijvend erfstuk',
         features: [
           'Professionele 3D-scan',
