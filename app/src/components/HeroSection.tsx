@@ -310,7 +310,7 @@ const HeroSection = ({
               <img
                 src={imageUrl || "/images/studio/DSC00571.JPG"}
                 alt="Zwangerschapsbeeldje"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-[center_65%]"
                 loading="eager"
               />
             </div>
