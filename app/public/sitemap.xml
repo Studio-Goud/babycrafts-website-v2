@@ -107,4 +107,41 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Nieuwe werkgebieden pagina's -->
+  <url>
+    <loc>https://babycrafts.nl/werkgebieden</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://babycrafts.nl/studiobezoek</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://babycrafts.nl/ziekenhuisbezoek</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Werkgebieden -->
+  <url>
+    <loc>https://babycrafts.nl/rotterdam</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://babycrafts.nl/den-haag</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

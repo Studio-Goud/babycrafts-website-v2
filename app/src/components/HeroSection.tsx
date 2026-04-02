@@ -248,7 +248,7 @@ const HeroSection = ({
                     <Star key={i} className="w-4 h-4 fill-[#C9A962] text-[#C9A962]" />
                   ))}
                 </div>
-                <p className="text-[#7D6A5A] text-sm">5/5 uit <span className="font-medium text-[#5A4A3D]">{statueCount.toLocaleString('nl-NL')}+</span> reviews</p>
+                <p className="text-[#7D6A5A] text-sm">5/5 uit <span className="font-medium text-[#5A4A3D]">64</span> Google reviews</p>
               </div>
               <div className="w-px h-10 bg-[#D4C8B8]" />
               <div className="float-animation" style={{ animationDelay: '0.5s' }}>
@@ -381,7 +381,7 @@ const HeroSection = ({
                     <Star key={i} className="w-3 h-3 fill-[#C9A962] text-[#C9A962]" />
                   ))}
                 </div>
-                <p className="text-[#7D6A5A] text-xs">5/5 <span className="font-medium">{statueCount.toLocaleString('nl-NL')}+</span> reviews</p>
+                <p className="text-[#7D6A5A] text-xs">5/5 <span className="font-medium">64</span> Google reviews</p>
               </div>
               <div className="w-px h-8 bg-[#D4C8B8]" />
               <div className="text-center">
