@@ -306,11 +306,11 @@ const HeroSection = ({
             {/* Decorative glow */}
             <div className="absolute -inset-1 bg-gradient-to-br from-[#C9A962]/20 to-[#7D5A4C]/15 rounded-2xl blur-lg" />
             
-            <div className="relative aspect-[3/4] max-w-[280px] mx-auto rounded-xl overflow-hidden shadow-lg bg-[#F3EFE8]">
+            <div className="relative aspect-[16/10] max-w-[320px] mx-auto rounded-xl overflow-hidden shadow-lg">
               <img
                 src={imageUrl || "/images/studio/DSC00571.JPG"}
                 alt="Zwangerschapsbeeldje"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover object-[center_40%]"
                 loading="eager"
               />
             </div>
