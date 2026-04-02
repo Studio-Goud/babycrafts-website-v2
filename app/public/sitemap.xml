@@ -144,4 +144,42 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- NIEUW: Concurrentie Analyse Pagina's -->
+  
+  <!-- 3D Echo Beeldje - Hoog volume keyword -->
+  <url>
+    <loc>https://babycrafts.nl/3d-echo-beeldje</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://babycrafts.nl/images/products/Babybeeldje.avif</image:loc>
+      <image:title>3D Echo Beeldje</image:title>
+      <image:caption>Van echo foto naar prachtig 3D beeldje</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Tweeling Beeldje - Niche markt -->
+  <url>
+    <loc>https://babycrafts.nl/tweeling-zwangerschapsbeeldje</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://babycrafts.nl/images/products/Arte%20Lumina%201.avif</image:loc>
+      <image:title>Tweeling Zwangerschapsbeeldje</image:title>
+      <image:caption>Dubbel bijzonder - tweeling beeldje</image:caption>
+    </image:image>
+  </url>
+
+  <!-- NIEUW: Lokale SEO Pagina's -->
+  
+  <!-- Schiedam - Belangrijke nabijgelegen stad -->
+  <url>
+    <loc>https://babycrafts.nl/schiedam-zwangerschapsbeeldje</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

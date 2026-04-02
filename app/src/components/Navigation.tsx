@@ -23,13 +23,11 @@ const Navigation = () => {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/zwangerschapsbeeldje', label: 'Zwangerschap' },
+    { path: '/3d-echo-beeldje', label: 'Echo Beeldje' },
+    { path: '/tweeling-zwangerschapsbeeldje', label: 'Tweeling' },
     { path: '/ouder-en-kind-beeldje', label: 'Ouder & Kind' },
-    { path: '/familiebeeldje', label: 'Familie' },
-    { path: '/babybeeldje', label: 'Baby' },
     { path: '/tarieven', label: 'Tarieven' },
     { path: '/werkgebieden', label: 'Werkgebieden' },
-    { path: '/over-ons', label: 'Over Ons' },
-    { path: '/contact', label: 'Contact' },
   ];
 
   const isActive = (path: string) => {

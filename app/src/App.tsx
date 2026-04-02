@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
-import StickyCTA from './components/StickyCTA';
-import WhatsAppChat from './components/WhatsAppChat';
+import StickyContact from './components/StickyContact';
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'));
@@ -30,6 +29,13 @@ const DenHaag = lazy(() => import('./pages/DenHaag'));
 const Werkgebieden = lazy(() => import('./pages/Werkgebieden'));
 const Studiobezoek = lazy(() => import('./pages/Studiobezoek'));
 const Ziekenhuisbezoek = lazy(() => import('./pages/Ziekenhuisbezoek'));
+
+// Nieuwe concurrentie-analyse pagina's
+const EchoBeeldje = lazy(() => import('./pages/EchoBeeldje'));
+const TweelingBeeldje = lazy(() => import('./pages/TweelingBeeldje'));
+
+// Locatie pagina's
+const Schiedam = lazy(() => import('./pages/locations/Schiedam'));
 
 // Loading component
 const PageLoader = () => (
@@ -81,9 +87,18 @@ function App() {
         <Route path="/studio" element={<StudioRotterdam />} />
         <Route path="/proces" element={<Werkwijze />} />
         <Route path="/materialen" element={<Ambacht />} />
+        
+        {/* Nieuwe concurrentie-analyse pagina's */}
+        <Route path="/3d-echo-beeldje" element={<EchoBeeldje />} />
+        <Route path="/echo-beeldje" element={<EchoBeeldje />} />
+        <Route path="/tweeling-zwangerschapsbeeldje" element={<TweelingBeeldje />} />
+        <Route path="/tweeling-beeldje" element={<TweelingBeeldje />} />
+        
+        {/* Locatie pagina's */}
+        <Route path="/schiedam-zwangerschapsbeeldje" element={<Schiedam />} />
+        <Route path="/schiedam" element={<Schiedam />} />
       </Routes>
-      <StickyCTA />
-      <WhatsAppChat />
+      <StickyContact />
     </Suspense>
   );
 }

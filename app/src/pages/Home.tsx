@@ -10,6 +10,7 @@ import HeroSection from '../components/HeroSection';
 import GoogleReviews from '../components/GoogleReviews';
 import CTABlock from '../components/CTABlock';
 import ScrollReveal, { StaggerContainer, StaggerItem } from '../components/ScrollReveal';
+import TrustBadges from '../components/TrustBadges';
 import { pageSEO } from '../lib/seo';
 import { getDynamicStatueCount } from '../lib/counter';
 
@@ -124,6 +125,9 @@ const Home = () => {
 
       {/* Hero */}
       <HeroSection />
+
+      {/* Trust Badges - Social Proof */}
+      <TrustBadges />
 
       {/* Features - Wat ons uniek maakt */}
       <section className="py-20 lg:py-28 bg-[#FAF8F5]">

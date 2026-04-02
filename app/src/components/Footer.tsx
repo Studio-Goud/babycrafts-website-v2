@@ -7,6 +7,8 @@ const Footer = () => {
   const footerLinks = {
     diensten: [
       { label: 'Zwangerschapsbeeldje', path: '/zwangerschapsbeeldje' },
+      { label: '3D Echo Beeldje', path: '/3d-echo-beeldje' },
+      { label: 'Tweeling Beeldje', path: '/tweeling-zwangerschapsbeeldje' },
       { label: 'Ouder & Kind', path: '/ouder-en-kind-beeldje' },
       { label: 'Familiebeeldje', path: '/familiebeeldje' },
       { label: 'Babybeeldje', path: '/babybeeldje' },
@@ -23,6 +25,7 @@ const Footer = () => {
     contact: [
       { label: 'Over Ons', path: '/over-ons' },
       { label: 'Werkgebieden', path: '/werkgebieden' },
+      { label: 'Schiedam', path: '/schiedam-zwangerschapsbeeldje' },
       { label: 'Studio Rotterdam', path: '/studio-rotterdam' },
       { label: 'Studiobezoek', path: '/studiobezoek' },
       { label: 'Ziekenhuisbezoek', path: '/ziekenhuisbezoek' },

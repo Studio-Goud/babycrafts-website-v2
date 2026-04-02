@@ -107,6 +107,23 @@ export const pageSEO: Record<string, SEOConfig> = {
     description: 'Vind antwoord op al je vragen over zwangerschapsbeeldjes. Timing, veiligheid, materialen, prijzen en meer.',
     keywords: 'faq, veelgestelde vragen, vragen 3D scan',
   },
+  // Nieuwe SEO pagina's
+  echoBeeldje: {
+    title: '3D Echo Beeldje | Van Echo naar Beeldje | Babycrafts',
+    description: 'Laat je 3D echo vereeuwigen in een prachtig beeldje. Van ultrasound foto naar tastbare herinnering. Ook mogelijk: mama + baby echo beeldje.',
+    keywords: '3D echo beeldje, echo beeldje, ultrasound beeldje, zwangerschap echo',
+  },
+  tweelingBeeldje: {
+    title: 'Tweeling Zwangerschapsbeeldje | Dubbel Bijzonder | Babycrafts',
+    description: 'Een tweeling zwangerschapsbeeldje is dubbel bijzonder. Leg jullie unieke tweelingzwangerschap vast in een prachtig 3D beeldje.',
+    keywords: 'tweeling zwangerschapsbeeldje, meerling beeldje, tweeling scan',
+  },
+  // Lokale SEO pagina's
+  schiedam: {
+    title: 'Zwangerschapsbeeldje Schiedam | 3D Scan | Babycrafts',
+    description: 'Zwangerschapsbeeldje laten maken in Schiedam? Babycrafts komt naar je toe! Professionele 3D scans in Schiedam en omgeving. Vanaf €199.',
+    keywords: 'zwangerschapsbeeldje Schiedam, 3D scan Schiedam, beeldje Schiedam',
+  },
 };
 
 export function generateMetaTags(config: SEOConfig): string {
