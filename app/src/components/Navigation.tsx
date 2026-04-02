@@ -27,6 +27,7 @@ const Navigation = () => {
     { path: '/familiebeeldje', label: 'Familie' },
     { path: '/babybeeldje', label: 'Baby' },
     { path: '/tarieven', label: 'Tarieven' },
+    { path: '/werkgebieden', label: 'Werkgebieden' },
     { path: '/over-ons', label: 'Over Ons' },
     { path: '/contact', label: 'Contact' },
   ];

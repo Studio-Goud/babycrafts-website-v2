@@ -22,7 +22,10 @@ const Footer = () => {
     ],
     contact: [
       { label: 'Over Ons', path: '/over-ons' },
+      { label: 'Werkgebieden', path: '/werkgebieden' },
       { label: 'Studio Rotterdam', path: '/studio-rotterdam' },
+      { label: 'Studiobezoek', path: '/studiobezoek' },
+      { label: 'Ziekenhuisbezoek', path: '/ziekenhuisbezoek' },
       { label: 'Contact', path: '/contact' },
       { label: 'Blog', path: '/blog' },
     ],
