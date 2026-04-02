@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star } from 'lucide-react';
 import { ReactNode } from 'react';
+import { getDynamicStatueCount } from '../lib/counter';
 
 interface HeroSectionProps {
   title?: string | ReactNode;
@@ -28,6 +29,7 @@ const HeroSection = ({
   imageUrl,
   variant = 'home',
 }: HeroSectionProps) => {
+  const statueCount = getDynamicStatueCount();
   if (variant === 'product') {
     return (
       <section className="relative bg-[#F3EFE8] overflow-hidden">
@@ -58,7 +60,7 @@ const HeroSection = ({
                     ))}
                   </div>
                   <span className="text-[#7D6A5A] text-sm">
-                    5/5 - 1300+ tevreden klanten
+                    5/5 - {statueCount.toLocaleString('nl-NL')}+ tevreden klanten
                   </span>
                 </div>
               )}
@@ -102,7 +104,7 @@ const HeroSection = ({
                 )}
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-[#D4C8B8]/30">
-                <p className="text-3xl font-serif text-[#C9A962] mb-1">1300+</p>
+                <p className="text-3xl font-serif text-[#C9A962] mb-1">{statueCount.toLocaleString('nl-NL')}+</p>
                 <p className="text-[#3D3229]/60 text-sm">Beeldjes gerealiseerd</p>
               </div>
             </motion.div>
@@ -195,7 +197,7 @@ const HeroSection = ({
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-[#7D5A4C]/10 rounded-full mb-6">
               <Star className="w-4 h-4 text-[#C9A962] mr-2 fill-[#C9A962]" />
-              <span className="text-[#5A4A3D] text-sm font-medium tracking-wide">1300+ zwangerschappen vastgelegd</span>
+              <span className="text-[#5A4A3D] text-sm font-medium tracking-wide">{statueCount.toLocaleString('nl-NL')}+ zwangerschappen vastgelegd</span>
             </div>
 
             {/* Main headline */}
@@ -246,7 +248,7 @@ const HeroSection = ({
                     <Star key={i} className="w-4 h-4 fill-[#C9A962] text-[#C9A962]" />
                   ))}
                 </div>
-                <p className="text-[#7D6A5A] text-sm">5/5 uit <span className="font-medium text-[#5A4A3D]">1300+</span> reviews</p>
+                <p className="text-[#7D6A5A] text-sm">5/5 uit <span className="font-medium text-[#5A4A3D]">{statueCount.toLocaleString('nl-NL')}+</span> reviews</p>
               </div>
               <div className="w-px h-10 bg-[#D4C8B8]" />
               <div className="float-animation" style={{ animationDelay: '0.5s' }}>
@@ -336,7 +338,7 @@ const HeroSection = ({
             {/* Badge */}
             <div className="inline-flex items-center px-3 py-1.5 bg-[#7D5A4C]/10 rounded-full mb-4">
               <Star className="w-3.5 h-3.5 text-[#C9A962] mr-1.5 fill-[#C9A962]" />
-              <span className="text-[#5A4A3D] text-xs font-medium">1300+ zwangerschappen</span>
+              <span className="text-[#5A4A3D] text-xs font-medium">{statueCount.toLocaleString('nl-NL')}+ zwangerschappen</span>
             </div>
 
             {/* Main headline */}
@@ -379,7 +381,7 @@ const HeroSection = ({
                     <Star key={i} className="w-3 h-3 fill-[#C9A962] text-[#C9A962]" />
                   ))}
                 </div>
-                <p className="text-[#7D6A5A] text-xs">5/5 <span className="font-medium">1300+</span> reviews</p>
+                <p className="text-[#7D6A5A] text-xs">5/5 <span className="font-medium">{statueCount.toLocaleString('nl-NL')}+</span> reviews</p>
               </div>
               <div className="w-px h-8 bg-[#D4C8B8]" />
               <div className="text-center">

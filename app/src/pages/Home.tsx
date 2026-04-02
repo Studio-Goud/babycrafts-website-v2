@@ -11,6 +11,7 @@ import GoogleReviews from '../components/GoogleReviews';
 import CTABlock from '../components/CTABlock';
 import ScrollReveal, { StaggerContainer, StaggerItem } from '../components/ScrollReveal';
 import { pageSEO } from '../lib/seo';
+import { getDynamicStatueCount } from '../lib/counter';
 
 const Home = () => {
   useEffect(() => {
@@ -18,6 +19,8 @@ const Home = () => {
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', pageSEO.home.description);
   }, []);
+
+  const statueCount = getDynamicStatueCount();
 
   const features = [
     {
@@ -47,7 +50,7 @@ const Home = () => {
     },
     {
       icon: Heart,
-      title: '1300+ beeldjes gerealiseerd',
+      title: `${statueCount.toLocaleString('nl-NL')}+ beeldjes gerealiseerd`,
       description: 'Ervaring die zichtbaar én voelbaar is in het eindresultaat.',
     },
   ];
@@ -179,7 +182,7 @@ const Home = () => {
 
                   <div className="grid grid-cols-3 gap-6 mt-10 pt-10 border-t border-[#D4C8B8]">
                     {[
-                      { nummer: '1300+', label: 'Beeldjes gerealiseerd' },
+                      { nummer: `${statueCount.toLocaleString('nl-NL')}+`, label: 'Beeldjes gerealiseerd' },
                       { nummer: '5/5', label: 'Google reviews' },
                       { nummer: '~5 á 6', label: 'Weken levertijd' },
                     ].map((stat, idx) => (

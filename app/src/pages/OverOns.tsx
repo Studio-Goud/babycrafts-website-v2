@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import ScrollReveal from '../components/ScrollReveal';
 import { pageSEO } from '../lib/seo';
+import { getDynamicStatueCount } from '../lib/counter';
 
 const OverOns = () => {
   useEffect(() => {
@@ -13,6 +14,8 @@ const OverOns = () => {
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', pageSEO.overOns.description);
   }, []);
+
+  const statueCount = getDynamicStatueCount();
 
   const values = [
     { 
@@ -73,7 +76,7 @@ const OverOns = () => {
                     />
                   </div>
                   <div className="absolute -bottom-6 -right-6 bg-gold rounded-2xl p-6 shadow-xl">
-                    <p className="font-serif text-3xl text-white">1300+</p>
+                    <p className="font-serif text-3xl text-white">{statueCount.toLocaleString('nl-NL')}+</p>
                     <p className="text-white/80 text-sm">Beeldjes gerealiseerd</p>
                   </div>
                 </div>

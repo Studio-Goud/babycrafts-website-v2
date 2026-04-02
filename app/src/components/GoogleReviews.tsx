@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight, MapPin, BadgeCheck } from 'lucide-react';
+import { getDynamicStatueCount } from '../lib/counter';
 
 interface Review {
   id: string;
@@ -65,6 +66,7 @@ const googleReviews: Review[] = [
 const GoogleReviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const statueCount = getDynamicStatueCount();
 
   const slideVariants = {
     enter: (direction: number) => ({
@@ -120,7 +122,7 @@ const GoogleReviews = () => {
               ))}
             </div>
             <span className="text-2xl font-serif">5.0</span>
-            <span className="text-white/60">| 1300+ reviews</span>
+            <span className="text-white/60">| {statueCount.toLocaleString('nl-NL')}+ reviews</span>
           </div>
         </motion.div>
 
@@ -227,7 +229,7 @@ const GoogleReviews = () => {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto"
         >
           {[
-            { number: '1300+', label: 'Tevreden klanten' },
+            { number: `${statueCount.toLocaleString('nl-NL')}+`, label: 'Tevreden klanten' },
             { number: '5.0', label: 'Google rating' },
             { number: '100%', label: 'Veilige scans' },
             { number: '5-6', label: 'Weken levertijd' },

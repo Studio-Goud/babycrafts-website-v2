@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, X, Sparkles, TrendingUp } from 'lucide-react';
+import { getDynamicStatueCount } from '../lib/counter';
 
 interface StickyCTAProps {
   calendlyUrl?: string;
@@ -10,6 +11,7 @@ const StickyCTA = ({ calendlyUrl = 'https://calendly.com/babycrafts-info/30min' 
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
   const [showUrgency, setShowUrgency] = useState(false);
+  const statueCount = getDynamicStatueCount();
 
   useEffect(() => {
     // Show sticky CTA after scrolling past hero
@@ -79,7 +81,7 @@ const StickyCTA = ({ calendlyUrl = 'https://calendly.com/babycrafts-info/30min' 
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-5 h-5 text-[#C9A962]" />
                     <span className="font-medium text-[#3D3229]">
-                      ✨ 1300+ zwangerschappen vastgelegd
+                      ✨ {statueCount.toLocaleString('nl-NL')}+ zwangerschappen vastgelegd
                     </span>
                   </div>
                   
@@ -130,7 +132,7 @@ const StickyCTA = ({ calendlyUrl = 'https://calendly.com/babycrafts-info/30min' 
             <div className="flex items-center gap-3">
               <div className="flex-1">
                 <p className="text-xs text-[#3D3229]/70 mb-1">
-                  {showUrgency ? '⚡ Slechts 8 plekken deze maand' : '⭐ 5/5 - 1300+ reviews'}
+                  {showUrgency ? '⚡ Slechts 8 plekken deze maand' : `⭐ 5/5 - ${statueCount.toLocaleString('nl-NL')}+ reviews`}
                 </p>
                 <p className="font-medium text-[#3D3229]">
                   Vanaf €199

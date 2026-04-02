@@ -9,6 +9,7 @@ import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import CTABlock from '../components/CTABlock';
 import { pageSEO } from '../lib/seo';
+import { getDynamicStatueCount } from '../lib/counter';
 
 const Zwangerschap = () => {
   useEffect(() => {
@@ -16,6 +17,8 @@ const Zwangerschap = () => {
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', pageSEO.zwangerschap.description);
   }, []);
+
+  const statueCount = getDynamicStatueCount();
 
   const products = [
     {
@@ -153,7 +156,7 @@ const Zwangerschap = () => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Heart className="w-5 h-5 text-[#C9A962]" />
-                  <span className="text-[#3D3229]/70">1300+ tevreden klanten</span>
+                  <span className="text-[#3D3229]/70">{statueCount.toLocaleString('nl-NL')}+ tevreden klanten</span>
                 </div>
               </div>
             </motion.div>
