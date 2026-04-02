@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Train, Car, Phone, Mail, Clock, Star, Check, Baby } from 'lucide-react';
+import { MapPin, Car, Check, Baby, Clock, Star } from 'lucide-react';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
-import HeroSection from '../../components/HeroSection';
 import CTABlock from '../../components/CTABlock';
 import TrustBadges from '../../components/TrustBadges';
 import CalendlyEmbed from '../../components/CalendlyEmbed';

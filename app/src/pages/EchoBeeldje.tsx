@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Clock, Shield, Check, Baby, Sparkles } from 'lucide-react';
+import { Heart, Clock, Shield, Check, Baby } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
