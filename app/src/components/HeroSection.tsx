@@ -294,17 +294,17 @@ const HeroSection = ({
 
         {/* MOBILE: Afbeelding bovenaan, tekst eronder */}
         <div className="lg:hidden max-w-md mx-auto">
-          {/* Mobile Image - Bovenaan */}
+          {/* Mobile Image - Bovenaan, volle breedte */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="relative max-w-[240px] mx-auto mb-6"
+            className="relative mb-6"
           >
             {/* Decorative glow */}
-            <div className="absolute -inset-2 bg-gradient-to-br from-[#C9A962]/20 to-[#7D5A4C]/15 rounded-2xl blur-lg" />
+            <div className="absolute -inset-1 bg-gradient-to-br from-[#C9A962]/20 to-[#7D5A4C]/15 rounded-2xl blur-lg" />
             
-            <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg">
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
               <img
                 src={imageUrl || "/images/studio/DSC00571.JPG"}
                 alt="Zwangerschapsbeeldje"
@@ -314,7 +314,7 @@ const HeroSection = ({
             </div>
             
             {/* Mini review badge */}
-            <div className="absolute -bottom-3 left-2 right-2 bg-white/95 backdrop-blur-sm rounded-lg p-2 shadow-lg border border-[#D4C8B8]/30">
+            <div className="absolute -bottom-3 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-lg p-2 shadow-lg border border-[#D4C8B8]/30">
               <div className="flex items-center justify-center gap-3">
                 <div className="flex items-center gap-0.5">
                   {[...Array(5)].map((_, i) => (
